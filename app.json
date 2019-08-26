@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/look/home/home",
+    "pages/new/home/home",
+    "pages/publish/home/home",
+    "pages/mine/home/home",
+    "pages/box/home/home",
+    "pages/new/comment/comment"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

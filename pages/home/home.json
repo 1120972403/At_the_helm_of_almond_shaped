@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "look": "/pages/look/home/home",
+    "new": "/pages/new/home/home",
+    "box": "/pages/box/home/home",
+    "mine": "/pages/mine/home/home"
+  }
+}

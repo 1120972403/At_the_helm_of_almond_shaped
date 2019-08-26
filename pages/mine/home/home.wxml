@@ -1,0 +1,79 @@
+<scroll-view scroll-y >
+  <cu-custom bgColor="bg-gradual-blue">
+    <view slot="content">我的</view>
+  </cu-custom>
+  <!-- 头部信息 -->
+  <view class="avatar-wrapper">
+    <view>
+      <view class="avatar">
+        <image style="border-radius:50%;" src="{{userinfo.avatar ? userinfo.avatar:'/images/default_head_circle.png'}}"></image>
+      </view>
+      <view class="text">
+        <text wx:if="{{userinfo.nickname}}">{{userinfo.nickname}}</text>
+        <button wx:else bindgetuserinfo="toLogin" open-type="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">微信登录</button>
+      </view>
+      <!-- <view class="text">
+        <text>{{"会员用户"}}</text>
+      </view> -->
+    </view>
+  </view>
+  <!-- 导航栏信息 -->
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class=" solid-right"> </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> View</view>
+      <view class="text-xxl text-orange">我的发布</view>
+
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill"></text> Star</view>
+      <view class="text-xxl text-blue">我的认证</view>
+
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="margin-top-sm">
+        <text class="cuIcon-fork"></text> Fork</view>
+      <view class="text-xxl text-green">我的收藏</view>
+
+    </view>
+  </view>
+  <!-- 中部导航 -->
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="cuIcon-github text-grey"></text>
+        <text class="text-grey">我的消息</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">推荐</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">日志</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">建议</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="" hover-class="none">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">关于</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

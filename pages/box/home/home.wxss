@@ -1,0 +1,46 @@
+/**index.wxss**/
+
+.box {  
+  margin: 20rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+}
+
+swiper{
+  background-color: white;
+  /* height: 300rpx!important; */
+}
+.swiper-item{
+  box-shadow: 10rpx 10rpx 40rpx gray;
+}
+.tab {
+  background-color: #f1f1f1;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+}
+
+.cu-tag {
+  font-size: 30rpx;
+  /* margin: 20rpx 50rpx; */
+}
+.tab-btn-flex{
+  display: flex;
+  width: 33.33%;
+}
+.page{
+  background-color: white;
+}
+.block{
+  /* display: flex; */
+}
