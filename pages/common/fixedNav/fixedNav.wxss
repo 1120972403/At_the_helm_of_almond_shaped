@@ -1,0 +1,25 @@
+/* pages/fixedNav/fixedNav.wxss */
+.fixedNav-box {
+  position: fixed;
+  bottom: 30rpx;
+  right: 40rpx;
+}
+.fixedNav-list {
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 3rpx 3rpx 10rpx 3rpx rgba(0,0,0,.2);
+  margin: 13rpx 0;
+  overflow: hidden;
+}
+.fixedNav-list image {
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 20%;
+}
+
+.code{
+  font-size:100rpx; 
+}

@@ -1,0 +1,19 @@
+<!-- 添加 -->
+<template name="fixedNav">
+  <view class='fixedNav-box'>
+    <view class="fixedNav-list" hover-class="weui-cell_active" bindtap='goTop'>
+      <image src="/images/jia.png"></image>
+    </view>
+  </view>
+</template>
+<!-- 条形码扫码添加 -->
+<template name="fixedCode">
+  <view class='fixedNav-box'>
+    <view  hover-class="weui-cell_active" bindtap='goTop'>
+      <view class="center margin-top-xl margin-bottom-xl">
+        <view class="cu-btn bg-green shadow round text-center">
+          <text class="cuIcon-barcode  lg text-white code"></text> 扫码卖书</view>
+      </view>
+    </view>
+  </view>
+</template>

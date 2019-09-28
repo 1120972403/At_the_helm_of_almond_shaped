@@ -8,7 +8,8 @@ Component({
     type: "look",
     
   },
-
+  attached() {
+  },
   methods:{
     click(e) {
       // console.log(e.currentTarget.dataset.name)
@@ -22,5 +23,6 @@ Component({
         url: '/pages/publish/home/home',
       })
     },
+
   }
 })

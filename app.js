@@ -8,9 +8,15 @@ App({
     }) // 如果是 tabbar 页面，请使用 wx.switchTab
   },
   onLaunch: function () {
-    // if (wx.cloud) {
-    //   wx.cloud.init({
-    //     traceUser: true
+    var isFir = wx.getStorageSync('isFirst');
+    // if(isFir){
+    //   wx.navigateTo({
+    //     url: '/pages/home/home',
+    //   })
+    // }
+    // else{
+    //   wx.navigateTo({
+    //     url: '/pages/welcome/welcome',
     //   })
     // }
     wx.getSystemInfo({
@@ -28,7 +34,6 @@ App({
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
             wx.getUserInfo({
               success: res => {
-                console.log("getUserInfo", res)
                 // 可以将 res 发送给后台解码出 unionId
                 this.globalData.userInfo = res.userInfo
 

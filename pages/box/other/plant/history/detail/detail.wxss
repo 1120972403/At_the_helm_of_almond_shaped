@@ -1,0 +1,75 @@
+/* pages/box/other/plant/history/detail/detail.wxss */
+.imgbox {
+    width: 90%;
+    background: #fff;
+    margin: 20rpx auto;
+    padding: 20rpx;
+    border-radius: 18rpx;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.uploadimg {
+    width: 100%;
+}
+
+.userinfo {
+    font-size: 30rpx;
+    margin: 10rpx 0;
+    font-weight: 500;
+    color: #aaa;
+}
+
+.allinfo {
+    width: 90%;
+    background: #fff;
+    margin: 20rpx auto;
+    padding: 10rpx;
+    border-radius: 18rpx;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    color: #5fc883;
+}
+
+.index {
+    width: 40rpx;
+    height: 40rpx;
+    background: #000;
+    border-radius: 50%;
+    color: #5fc883;
+    display: inline-block;
+}
+
+.name {
+    position: absolute;
+    right: 80rpx;
+    top: 60rpx;
+}
+
+.name text {
+    writing-mode: vertical-rl;
+    color: #fff;
+    font-size: 45rpx;
+    letter-spacing: 5rpx;
+}
+
+
+
+
+.baike-item-title {
+    display: block;
+    font-size: 33rpx;
+    color: #000;
+    margin: 32rpx 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+}
+
+.baike-item-detail {
+    display: inline-block;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: center;
+}

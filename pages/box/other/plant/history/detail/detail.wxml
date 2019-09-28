@@ -1,0 +1,24 @@
+<!--pages/box/other/plant/history/detail/detail.wxml-->
+<view class="wrap">
+  <view class="imgbox">
+    <image  mode="widthFix" src="{{imgUrl}}"></image>
+    <view class="userinfo">拍摄: {{detail.nickName}}</view>
+    <view class="userinfo">时间: {{detail.create_time}}</view>
+    <view class="name">
+      <text>{{detail.name}}</text>
+    </view>
+    <view class="center">
+      <view class="cu-btn bg-yellow round" openType="share">立即分享</view>
+    </view>
+  </view>
+  <view>
+    <view class="allinfo">
+      <text class="baike-item-title">识花百科</text>
+      <text class="baike-item-detail">{{detail.description}}</text>
+    </view>
+  </view>
+</view>
+
+<cu-custom isCustom="{{true}}">
+  <view slot="content">大家都在拍</view>
+</cu-custom>

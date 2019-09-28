@@ -1,0 +1,14 @@
+<!--pages/welcome/welcome.wxml-->
+<swiper indicator-dots="true">
+  <block wx:for="{{imgs}}" wx:for-index="index">
+    <swiper-item class="swiper-items">
+      <image class="swiper-image" src="{{item}}"></image>
+      
+      <!-- 需要使用 button 来授权登录 -->
+      <view wx:if="{{canIUse}}">
+        <button open-type="getUserInfo" class="button-img bg-green" bindgetuserinfo="bindGetUserInfo" wx:if="{{index == imgs.length - 1}}">立即体验</button>
+        <view wx:else>请升级微信版本</view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

@@ -4,16 +4,25 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.2",
-	"appid": "wxe022f0f6636bd30c",
+	"appid": "wxcbb880b74d3f907d",
 	"projectname": "Live",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -52,6 +61,160 @@
 					"id": -1,
 					"name": "速览--首页",
 					"pathName": "pages/look/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "失物招领---主页面",
+					"pathName": "pages/box/live/lostfound/lostfound",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "失物招领信息发布",
+					"pathName": "pages/box/live/lostfound/addlost/addlost",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "失物招领详细页面",
+					"pathName": "pages/box/live/lostfound/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "闲置物品",
+					"pathName": "pages/box/live/idles/idles",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "闲置图书添加",
+					"pathName": "pages/box/live/idles/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "校园通讯录",
+					"pathName": "pages/box/navigate/address_list/address_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成绩查询",
+					"pathName": "pages/box/study/score/score",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布失物招领信息",
+					"pathName": "pages/box/live/lostfound/addlost/addlost",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "安全认证",
+					"pathName": "pages/mine/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户须知",
+					"pathName": "pages/mine/auth/agreement/agreement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新闻详细",
+					"pathName": "pages/look/newlist/newdetail/newdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "招生就业资讯",
+					"pathName": "pages/look/getJob/getJob",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的发布汇总",
+					"pathName": "pages/mine/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "中药材图谱",
+					"pathName": "pages/box/other/medicinal/medicinal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/mine/myinfo/myinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "识别详细页面",
+					"pathName": "pages/box/other/plant/flower/flower",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "识别历史",
+					"pathName": "pages/box/other/plant/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新鲜事",
+					"pathName": "pages/new/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新鲜事信息发布",
+					"pathName": "pages/publish/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "大家都在拍",
+					"pathName": "pages/box/other/plant/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "植物识别",
+					"pathName": "pages/box/other/plant/plant",
 					"scene": null
 				}
 			]

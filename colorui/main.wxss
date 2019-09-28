@@ -67,7 +67,7 @@ page {
 	--grayShadow: rgba(114, 130, 138, 0.2);
 	--blackShadow: rgba(26, 26, 26, 0.2);
 
-	background-color: #fff;
+	background-color: var(--ghostWhite);
 	font-size: 28rpx;
 	color: var(--black);
 	font-family: Helvetica Neue, Helvetica, sans-serif;
@@ -2617,7 +2617,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .card-swiper {
-	height: 350rpx !important;
+	height: 320rpx !important;
 }
 
 .card-swiper swiper-item {

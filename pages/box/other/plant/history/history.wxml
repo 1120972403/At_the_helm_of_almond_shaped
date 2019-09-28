@@ -1,0 +1,26 @@
+<!--pages/box/other/plant/history/history.wxml-->
+
+<view class="bg bg-gradual-blue">
+</view>
+<view class="center top text-xl">已识别植物{{list.length}}次</view>
+<navigator url="/pages/box/other/plant/plant" open-type="navigate" hover-class='none'>
+  <view class="box text-center radius margin-sm">
+    <view class="cu-btn bg-yellow round">植物识别</view>
+  </view>
+</navigator>
+
+<view class="m-list">
+  <view class="m-list-bd">
+    <block wx:for="{{list}}" wx:for-index="indexs" wx:key="keys">
+      <view bindtap="gotoinfo" class="item ripple zoomIn" data-infoid="{{item.id}}">
+        <image class="backg" mode="aspectFill" src="{{item.imgUrl}}"></image>
+        <view class="text ">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<cu-custom isCustom="{{true}}">
+  <view slot="content">大家都在拍</view>
+</cu-custom>

@@ -1,0 +1,67 @@
+<!--pages/mine/myinfo/myinfo.wxml-->
+
+
+<view class="mine-top">
+  <image class="mine-bg" src="/images/mine_bg.jpg" style="width:100%;" mode="widthFix"></image>
+  <view class="mine-info">
+    <view class="left">
+      <image class="head-img" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="right">
+      <text wx:if="{{stu_info}}" class="mine-name">{{stu_info[0]}}</text>
+      <text wx:else class="mine-name">{{userInfo.nickName}}</text>
+      <text wx:if="{{stu_info}}" class="mine-number">学号:{{stu_info[1]}}</text>
+      <text wx:else bindtap="navgo" class="mine-number1">未教务系统认证</text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl radius text-shadow">
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">微信名：</text>
+      <text class="text-grey float-right">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">学院：</text>
+    </view>
+  </view>
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">性别：</text>
+      <text wx:if="{{userInfo.gender == 1}}" class="text-grey float-right">男</text>
+      <text wx:elif="{{userInfo.gender == 2}}" class="text-grey float-right">女</text>
+      <text wx:else class="text-grey float-right">未知</text>
+    </view>
+  </view>
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">年级：</text>
+      <text class="text-grey float-right">{{class1}}级</text>
+    </view>
+  </view>
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">地区：</text>
+      <text class="text-grey float-right">{{userInfo.city}}-{{userInfo.province}}</text>
+    </view>
+  </view>
+    <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">介绍：</text>
+      <text class="text-grey ">Study hard and make progress every day</text>
+    </view>
+  </view>
+</view>
+
+<cu-custom isCustom="{{true}}">
+  <view slot="content">招生就业</view>
+</cu-custom>

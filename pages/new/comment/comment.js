@@ -1,4 +1,6 @@
 // pages/new/home/comment/comment.js
+const app = getApp()
+const apiUrl = require('../../../config.js').apiUrl
 Page({
 
   /**
@@ -12,7 +14,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.id)
+    var that = this
+    wx.request({
+      url: apiUrl + 'article/articleDetail?id=' + options.id,
+      method:"get",
+      success:(res)=>{
+        console.log(res.data.data)
+        that.setData({
+          detail: res.data.data
+        })
+      }
+    })
   },
 
   /**

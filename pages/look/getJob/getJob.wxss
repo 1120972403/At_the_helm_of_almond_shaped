@@ -1,0 +1,54 @@
+/* pages/look/getJob/getJob.wxss */
+.msg-list-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.msg-list-date {
+  margin: 52rpx auto 27rpx;
+  width: 250rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background-color: #e5e5e5;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  border-radius: 28rpx;
+}
+
+.msg-list navigator {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom:23rpx;
+  padding: 0 38rpx;
+  width: 690rpx;
+  height: 220rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.msg-list .readed text{
+  color: #999999;
+}
+.msg-list text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 28rpx;
+  font-size: 30rpx;
+  line-height: 33.6rpx;
+  color: #000;
+}
+
+.msg-list view {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #bfbfbf;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}

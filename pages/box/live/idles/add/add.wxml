@@ -1,0 +1,95 @@
+<!--pages/box/live/idles/add/add.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">添加页面</view>
+</cu-custom>
+<view class="card">
+  <view class="flex  p-xs margin-bottom-sm mb-sm">
+    <!-- 图片 -->
+    <image class="flex-sub margin-top padding-sm margin-left-xs radius img" src="{{bookInfo.logo}}"></image>
+    <!-- 读取信息描述 --> 
+    <view class="flex-twice radius">
+      <view class="margin-top-lg border-bottom font-weight">书名：{{bookInfo.title}}</view>
+      <view class=" margin-top-sm border-bottom">作者：{{bookInfo.author[0].name}}</view>
+      <view class=" margin-top-sm border-bottom">ISBN：{{isbn}}</view>
+      <view class=" margin-top-sm border-bottom">出版社：{{bookInfo.publisher}} | 出版时间：{{bookInfo.published}}</view>
+      <view class=" margin-top-sm  border-bottom">原价：￥{{bookInfo.price}}</view>
+      <view class=" margin-top-sm border-bottom">页数：{{bookInfo.page}}页</view>
+    </view>
+  </view>
+  <view class=" margin border-bottom line-height">书本描述：{{bookInfo.description}}</view>
+</view>
+
+
+
+
+<!-- 作者描述 -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="card"> 
+
+    <view class="cu-form-group">
+      <view class="title ">折扣</view>
+      <input value="{{new_price}}元" placeholder="0元" class="text-red" name="new_price" disabled="disabled"></input>
+      <picker bindchange="PickerChange" value="{{discount}}" data-prcie='{{bookInfo.price}}' range="{{picker}}">
+        <view class="picker">
+          <input value="{{discount}}" name="discount" hidden="hidden"></input>
+          {{discount}}折
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">书籍描述</view>
+      <textarea placeholder="请对你要卖的书籍进行描述,越详细的描述卖出的可能性越大哦!。。。。" name="remark"></textarea>
+    </view>
+    <view class="cu-form-group justify-content">
+      <view class="title">交易方式</view>
+      <radio-group class="flex" name="mode">
+        <radio value="面交"></radio>
+        <view class="margin-left margin-right center">面交</view>
+        <radio value="邮寄"></radio>
+        <view class="margin-left center">邮寄</view>
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">电话</view>
+      <input placeholder="请输入联系电话" name="phone"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">QQ</view>
+      <input placeholder="请输入QQ" name="qq"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">微信</view>
+      <button class="cu-btn round bg-green shadow">
+        <text class="cuIcon-weixin"></text> 加入微信</button>
+    </view>
+  </view>
+  <view class="center margin-top-xl margin-bottom-xl">
+    <button class="cu-btn bg-green shadow round text-center" formType="submit">立即发布</button>
+    <button class="cu-btn bg-grey shadow round text-center margin-left" formType="reset">重置</button>
+  </view>
+</form>
+
+
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>
+
+
+<!-- 扫码失败时要显示的内容 -->
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+      <!-- <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view> -->
+    </view>
+    <view class="padding-xl">
+      暂未收集到该书相关信息，相应书籍信息正在添加中。。。。
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green solid-left" bindtap="back">我知道了！</view>
+    </view>
+  </view>
+</view>

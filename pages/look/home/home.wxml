@@ -1,7 +1,80 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">速览</view>
 </cu-custom>
-<view class="marquee_container"  style="--marqueeWidth--:-12em">
-    <view class="marquee_text">一个人活着就是为了让更多的人更好的活着！</view>
+<!-- 滚动 -->
+<view class="container">
+  <view class="tui-rolling-news">
+    <view class="cu-item">
+      <text class="cuIcon-noticefill lg text-red"></text>
+    </view>
+    <swiper vertical="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="3000" class="tui-swiper">
+      <swiper-item wx:for="{{newsList}}" wx:key="{{index}}" class="tui-swiper-item">
+        <view class="tui-news-item" bindtap='detail'>{{item.title}}</view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<!-- 天气预报及时间 -->
+<navigator url="/pages/look/weather/weather">
+<view class="container">
+  <view class="weather yesterday">
+    <view>
+      <view class='date'>今天</view>
+      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{today.tmp_min}}℃~{{today.tmp_max}}℃</view>
+      <view class='cond_txt'>{{today.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{todyIcon}}' class="cloud"></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+</view>
+</navigator>
+
+<!-- 校内大事件 -->
+<navigator class="cu-card case" url="/pages/look/newlist/newlist">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="http://www.cdutcm.edu.cn/upload/main/advertisement/843c4f43f57d4f378ecfc890ce3c0baa_1200_350.jpg" class="img" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">校闻速递</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">校闻速递，教务公告</text>
+      </view>
+    </view>
+  </view>
+</navigator>
+
+<!-- 招生就业-->
+<navigator class="cu-card case" url="/pages/look/getJob/getJob">
+  <view class="cu-item shadow">
+    <view class="image">
+          <image src="http://www.cdutcm.edu.cn/upload/main/advertisement/dc6957baec4540c788e1015b39cbdc0a_1200_350.jpg" class="img" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">招生就业</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">校招信息，快速了解企业</text>
+      </view>
+    </view>
+  </view>
+
+</navigator>
+
+
+<!-- 速览中医大 -->
+<view class="cu-card case">
+  <view class="cu-item shadow">
+    <view class="image">
+          <image src="http://www.cdutcm.edu.cn/upload/main/advertisement/00b0fbd754544ec4a52a6c7c8b7c82b3_1200_350.jpg" class="img" mode="aspectFill"></image>
+      <!-- <video src="{{mapUrl}}"> </video> -->
+
+      <view class="cu-tag bg-blue">速览中医大</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">快速了解中医大</text>
+      </view>
+    </view>
+  </view>
+
 </view>
 

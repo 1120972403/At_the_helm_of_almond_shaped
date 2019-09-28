@@ -1,0 +1,14 @@
+<!--pages/look/newlist/newdetail/newdetail.wxml-->
+
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">详细页面</view>
+</cu-custom>
+<view class="article-style">
+  <view class="article-title">{{title}}</view>
+  <view class="article-info">
+    <text>{{date}}</text>
+  </view>
+  <view class="article-content">
+    <rich-text nodes="{{html}}"></rich-text>
+  </view>
+</view>

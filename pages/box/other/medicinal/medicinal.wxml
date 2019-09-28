@@ -1,0 +1,49 @@
+<!--pages/box/other/medicinal/medicinal.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>中药材图谱</view>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot margin-xl" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{2}}" wx:key >
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569223798184&di=396d65884b8baf5eb5ffa149ede410d0&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_mini%2Cc_zoom%2Cw_640%2Fimages%2F20170808%2F16e6e77298d8421db73e6f70be082c64.jpeg" mode='aspectFill' class="raduis"></image>
+  </swiper-item>
+</swiper>
+
+
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx);width:250rpx;">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{type}}" wx:key bindtap='tabSelect' data-id="{{index}}" data-typeid="{{item.id}}" data-name="{{item.name}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+
+
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}">
+    <view class="padding-top padding-lr">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> {{typename}} </view>
+      </view>
+
+      <view class="m-list">
+
+        <view class="m-list-bd">
+          <block wx:for="{{typelist}}" wx:key="keys">
+            <navigator url="./details/details?id={{item.id}}">
+              <view bindtap="gotoinfo" class="item ripple zoomIn" data-infoid="{{item.id}}">
+                <image class="bg" mode="aspectFill" src="{{item.img}}"></image>
+                <view class="text ">{{item.name}}</view>
+              </view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>

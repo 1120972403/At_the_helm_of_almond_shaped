@@ -1,13 +1,51 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/welcome/welcome",
     "pages/look/home/home",
     "pages/new/home/home",
     "pages/publish/home/home",
     "pages/mine/home/home",
     "pages/box/home/home",
-    "pages/new/comment/comment"
+    "pages/new/comment/comment",
+    "pages/box/live/lostfound/lostfound",
+    "pages/box/live/idles/idles",
+    "pages/box/live/lostfound/addlost/addlost",
+    "pages/box/live/lostfound/detail/detail",
+    "pages/box/live/idles/detail/detail",
+    "pages/box/live/idles/add/add",
+    "pages/box/navigate/address_list/address_list",
+    "pages/look/weather/weather",
+    "pages/box/navigate/new/new",
+    "pages/box/navigate/new/comment/comment",
+    "pages/box/study/score/score",
+    "pages/box/study/score/ncer/ncer",
+    "pages/mine/auth/auth",
+    "pages/mine/auth/agreement/agreement",
+    "pages/mine/log/log",
+    "pages/mine/about/about",
+    "pages/mine/publish/publish",
+    "pages/mine/store/store",
+    "pages/look/newlist/newlist",
+    "pages/look/newlist/newdetail/newdetail",
+    "pages/look/getJob/getJob",
+    "pages/look/getJob/msgarticle/msgarticle",
+    "pages/box/study/score/cet/cet",
+    "pages/mine/myinfo/myinfo",
+    "pages/common/goauth/goauth",
+    "pages/box/other/plant/plant",
+    "pages/box/other/medicinal/medicinal",
+    "pages/box/other/medicinal/details/details",
+    "pages/box/swiperlist/swiperlist",
+    "pages/box/other/plant/flower/flower",
+    "pages/box/other/plant/history/history",
+    "pages/box/other/plant/history/detail/detail"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "navigationStyle": "custom"
   },

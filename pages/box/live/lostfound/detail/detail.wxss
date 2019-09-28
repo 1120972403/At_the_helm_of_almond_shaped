@@ -1,0 +1,37 @@
+/* pages/box/live/lostfound/detail/detail.wxss */
+
+.card {
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.title {
+  margin: 30rpx;
+  display: inline-block;
+  font-size: 40rpx;
+  color: green;
+  vertical-align: middle;
+  max-width: 460rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card .content {
+  display: flex;
+  /* border-top: 1px solid gainsboro; */
+  font-size: 30rpx;
+  box-sizing: border-box;
+  line-height: 60rpx;
+}
+
+.back {
+  /* border:1px solid white;
+  border-radius: 20rpx; */
+}
+
+
+.cuIcon-dianhua {
+  font-size: 40rpx;
+}

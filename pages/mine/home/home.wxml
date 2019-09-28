@@ -1,79 +1,93 @@
-<scroll-view scroll-y >
-  <cu-custom bgColor="bg-gradual-blue">
-    <view slot="content">我的</view>
-  </cu-custom>
-  <!-- 头部信息 -->
-  <view class="avatar-wrapper">
-    <view>
-      <view class="avatar">
-        <image style="border-radius:50%;" src="{{userinfo.avatar ? userinfo.avatar:'/images/default_head_circle.png'}}"></image>
-      </view>
-      <view class="text">
-        <text wx:if="{{userinfo.nickname}}">{{userinfo.nickname}}</text>
-        <button wx:else bindgetuserinfo="toLogin" open-type="getUserInfo" class="weui-btn mini-btn" type="primary" size="mini">微信登录</button>
-      </view>
-      <!-- <view class="text">
-        <text>{{"会员用户"}}</text>
-      </view> -->
+<view class="mine-top">
+  <image class="mine-bg" src="/images/mine_bg.jpg" style="width:100%;" mode="widthFix"></image>
+  <view class="mine-info">
+    <view class="left">
+      <image class="head-img" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="right">
+      <text wx:if="{{stu_info}}" class="mine-name">{{stu_info[0]}}</text>
+      <text wx:else class="mine-name">{{userInfo.nickName}}</text>
+
+      <text wx:if="{{stu_info}}" class="mine-number">学号:{{stu_info[1]}}</text>
+      <text wx:else bindtap="navgo" class="mine-number1">未教务系统认证</text>
     </view>
   </view>
-  <!-- 导航栏信息 -->
-  <view class="padding flex text-center text-grey bg-white shadow-warp">
-    <view class=" solid-right"> </view>
-    <view class="flex flex-sub flex-direction solid-right">
+</view>
+
+
+
+
+<!-- 导航栏信息 -->
+<view class="card text-center">
+  <view class="flex">
+    <navigator url="/pages/mine/publish/publish" class="flex-sub  padding-sm margin-xs radius  border-left">
       <view class="margin-top-sm">
-        <text class="cuIcon-attentionfill"></text> View</view>
+        <text class="cuIcon-attentionfill lg"></text>
+      </view>
       <view class="text-xxl text-orange">我的发布</view>
+    </navigator>
 
-    </view>
-    <view class="flex flex-sub flex-direction solid-right">
-      <view class="margin-top-sm">
-        <text class="cuIcon-favorfill"></text> Star</view>
+<!-- 如果已经完成认证，不能再进行认证 -->
+
+     <navigator wx:if="{{stu_info}}" url="/pages/mine/myinfo/myinfo" class="flex-sub  padding-sm margin-xs radius border-left">
+      <view class="margin-top-sm ">
+        <text class="cuIcon-wefill lg"></text>
+      </view>
+      <view class="text-xxl text-blue">我的信息</view>
+    </navigator>
+
+    <navigator wx:else url="/pages/mine/auth/auth" class="flex-sub  padding-sm margin-xs radius border-left">
+      <view class="margin-top-sm ">
+        <text class="cuIcon-wefill lg"></text>
+      </view>
       <view class="text-xxl text-blue">我的认证</view>
+    </navigator>
 
-    </view>
-    <view class="flex flex-sub flex-direction solid-right">
+    <navigator url="/pages/mine/store/store" class="flex-sub  padding-sm margin-xs radius">
       <view class="margin-top-sm">
-        <text class="cuIcon-fork"></text> Fork</view>
+        <text class="cuIcon-like lg"></text>
+      </view>
       <view class="text-xxl text-green">我的收藏</view>
+    </navigator>
+  </view>
+</view>
+<!-- 中部导航 -->
 
+
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl radius text-shadow">
+  <view class="cu-item arrow">
+    <view class="content">
+      <text class="cuIcon-comment text-grey"></text>
+      <text class="text-grey">我的消息</text>
     </view>
   </view>
-  <!-- 中部导航 -->
-  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-    <view class="cu-item arrow">
-      <view class="content">
-        <text class="cuIcon-github text-grey"></text>
-        <text class="text-grey">我的消息</text>
-      </view>
-    </view>
 
-    <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="cuIcon-appreciatefill text-red"></text>
-        <text class="text-grey">推荐</text>
-      </view>
-    </view>
-
-    <view class="cu-item arrow">
-      <navigator class="content" url="" hover-class="none">
-        <text class="cuIcon-formfill text-green"></text>
-        <text class="text-grey">日志</text>
-      </navigator>
-    </view>
-
-    <view class="cu-item arrow">
-      <button class="cu-btn content" open-type="feedback">
-        <text class="cuIcon-writefill text-cyan"></text>
-        <text class="text-grey">建议</text>
-      </button>
-    </view>
-    <view class="cu-item arrow">
-      <navigator class="content" url="" hover-class="none">
-        <text class="cuIcon-creativefill text-orange"></text>
-        <text class="text-grey">关于</text>
-      </navigator>
+  <view class="cu-item ">
+    <view class="content" bindtap="showQrcode">
+      <text class="cuIcon-forward text-grey"></text>
+      <text class="text-grey">推荐</text>
     </view>
   </view>
-  <view class="cu-tabbar-height"></view>
-</scroll-view>
+
+  <view class="cu-item arrow">
+    <navigator class="content" url="" hover-class="none">
+      <text class="cuIcon-formfill text-grey"></text>
+      <text class="text-grey">日志</text>
+    </navigator>
+  </view>
+
+  <view class="cu-item arrow">
+    <button class="cu-btn content" open-type="feedback">
+      <text class="cuIcon-writefill text-grey"></text>
+      <text class="text-grey">建议</text>
+    </button>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="" hover-class="none">
+      <text class="cuIcon-creativefill text-grey"></text>
+      <text class="text-grey">关于</text>
+    </navigator>
+  </view>
+</view>
+<view class="cu-tabbar-height"></view>

@@ -1,0 +1,169 @@
+.swiper {
+    transform: scale3d(1.2,1.2,1) translate3d(0,-8%,0);
+    z-index: 1;
+}
+.flag{
+  padding: 0 23rpx;
+  height: 52rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 26rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 52rpx;
+}
+.tips {
+    width: 90%;
+    align-items: center;
+    margin: 10rpx 20rpx;
+    z-index: 1;
+    position: fixed;
+    color: #fff;
+    top: 150rpx;
+}
+
+.datalength {
+    color: #5fc883;
+}
+
+.flower-wrapper {
+    width: 750rpx;
+    height: 100%;
+    position: relative;
+}
+.flower-show {
+    background-position: top;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+.flowerbox-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 750rpx;
+}
+
+.flower-box {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 20rpx 20rpx 0 0;
+    top: 400rpx;
+    width: 100%;
+    padding-top: 10rpx;
+    padding-bottom: 200rpx;
+    background-color: rgb(255,254,251);
+    color: rgb(255,255,255);
+    color: #41423D;
+    background: #fff;
+    border-top-left-radius: 12rpx;
+    border-top-right-radius: 12rpx;
+    min-height: 876rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flower-box .coverImage {
+    margin-top: 40rpx;
+    display: block;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+}
+
+.flower-box .title {
+    padding-left: 20rpx;
+    padding-top: 20rpx;
+    height: 60rpx;
+    line-height: 35rpx;
+}
+
+.flower-box .wrapper {
+    padding-left: 40rpx;
+    padding-right: 20rpx;
+}
+
+.flower-box .wrapper::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.flower-box .wrapper .image {
+    margin: 20rpx 0;
+    margin-right: 20rpx;
+    float: left;
+    width: 200rpx;
+    height: 170rpx;
+    border-radius: 10rpx;
+}
+
+.flower-box .wrapper .text {
+    font-size: 30rpx;
+    line-height: -100px;
+}
+
+.flower-box .meitu-wrapper {
+    margin-left: 45rpx;
+    margin-right: 45rpx;
+}
+
+.flower-box .meitu-wrapper .title {
+    text-align: left;
+    width: 90rpx;
+    margin: 0 auto 50rpx;
+    font-size: 36rpx;
+    color: #8F8F8F;
+}
+
+.flower-box .meitu-wrapper .image {
+    margin: 0 auto;
+}
+
+.flower-box .meitu-wrapper .image>image {
+    width: 180rpx;
+    height: 150rpx;
+    margin: 0 10rpx;
+}
+
+.flower-box .meitu-wrapper .btn {
+    margin: 20rpx auto;
+    text-align: center;
+    width: 160rpx;
+    height: 50rpx;
+    border: solid 1px #e3e3e3;
+    border-radius: 10rpx;
+    line-height: 50rpx;
+}
+
+.flower-box .meitu-wrapper .btn>text {
+    font-size: 14px;
+    line-height: 50rpx;
+    color: #434343;
+}
+
+
+
+
+
+
+
+
+.bottom-btn {
+    position: fixed;
+    bottom: 50rpx;
+    width: 100%;
+}
+
+
+
+
+

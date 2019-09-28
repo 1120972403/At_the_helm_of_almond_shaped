@@ -7,7 +7,7 @@
 <swiper class="card-swiper {{!DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500" bindchange="cardSwiper" indicator-color="#f2f2f2" indicator-active-color="gray">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class="swiper-item">
-      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <image src="{{item.img}}" mode="aspectFill"></image>
     </view>
   </swiper-item>
 </swiper>
@@ -18,8 +18,9 @@
       <text class="cuIcon-title text-blue"></text>学习助手</view>
   </view>
   <view class="flex solid-bottom padding justify-center">
-    <view class="bg-blue light padding-sm margin-xs radius">四六级查分</view>
-    <view class="bg-blue light padding-sm margin-xs radius">NCER查分</view>
+    <navigator open-type="navigate" hover-class='none' url="/pages/box/study/score/score">
+      <view class="bg-blue light padding-sm margin-xs radius">等级考试查分</view>
+    </navigator>
     <view class="bg-blue light padding-sm margin-xs radius">抢课助手</view>
     <view class="bg-blue light padding-sm margin-xs radius">练题程序</view>
   </view>
@@ -27,12 +28,17 @@
 <view class='page'>
   <view class='tab'>
     <view class='tab-content'>
-      <text class="cuIcon-title text-blue"></text>导航</view>
+      <text class="cuIcon-title text-blue"></text>校园导航</view>
   </view>
   <view class="flex solid-bottom padding justify-center">
     <view class="bg-blue light padding-sm margin-xs radius">校园地图</view>
-    <view class="bg-blue light padding-sm margin-xs radius">校园通讯录</view>
+    <navigator open-type="navigate" hover-class='none' url="/pages/box/navigate/address_list/address_list">
+      <view class="bg-blue light padding-sm margin-xs radius">校园通讯录</view>
+    </navigator>
     <view class="bg-blue light padding-sm margin-xs radius">院系速知</view>
+    <!-- <navigator open-type="navigate" hover-class='none' url="/pages/box/navigate/new/new">
+      <view class="bg-blue light padding-sm margin-xs radius">校园新鲜事</view>
+    </navigator> -->
   </view>
 </view>
 
@@ -42,10 +48,18 @@
       <text class="cuIcon-title text-blue"></text>校园生活</view>
   </view>
   <view class="flex solid-bottom padding justify-center">
-    <view class="bg-blue light padding-sm margin-xs radius">失物招领</view>
-    <view class="bg-blue light padding-sm margin-xs radius">闲置物品</view>
-    <view class="bg-blue light padding-sm margin-xs radius">社团招新</view>
-        <view class="bg-blue light padding-sm margin-xs radius">表白墙</view>
+    <navigator open-type="navigate" hover-class='none' url="/pages/box/live/lostfound/lostfound">
+      <view class="bg-blue light padding-sm margin-xs radius">失物招领</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="/pages/box/live/idles/idles">
+      <view class="bg-blue light padding-sm margin-xs radius">闲置物品</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="">
+      <view class="bg-blue light padding-sm margin-xs radius">社团招新</view>
+    </navigator>
+    <navigator open-type="navigate" hover-class='none' url="">
+      <view class="bg-blue light padding-sm margin-xs radius">表白墙</view>
+    </navigator>
   </view>
 </view>
 
@@ -55,10 +69,13 @@
       <text class="cuIcon-title text-blue"></text>其他</view>
   </view>
   <view class="flex solid-bottom padding justify-center">
-    <view class="bg-blue light padding-sm margin-xs radius">课间小游戏</view>
-    <view class="bg-blue light padding-sm margin-xs radius">意见反馈</view>
+    <view class="bg-blue light padding-sm margin-xs radius">小游戏</view>
+    <!-- <view class="bg-blue light padding-sm margin-xs radius">反馈</view> -->
+    <navigator url="/pages/box/other/plant/plant" open-type="navigate" hover-class='none'>
     <view class="bg-blue light padding-sm margin-xs radius">植物识别</view>
-        <view class="bg-blue light padding-sm margin-xs radius">生活攻略</view>
+    </navigator>
+        <navigator url="/pages/box/other/medicinal/medicinal" open-type="navigate" hover-class='none'>
+    <view class="bg-blue light padding-sm margin-xs radius">中药材图谱</view>
+     </navigator>
   </view>
 </view>
-

@@ -1,0 +1,27 @@
+<!--pages/look/getJob/getJob.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">招生就业</view>
+    <view class="action" slot="right">
+    <view class="cu-load load-icon {{isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+
+
+<!-- 内容页面 -->
+<view class="container msg-list-wrap">
+  <view>
+    <block wx:for="{{getlist}}" wx:key="*this">
+      <view class="msg-list-date">{{item.article_date}}</view>
+      <view class="msg-list">
+        <navigator url="./msgarticle/msgarticle?id={{item.id}}">
+          <text>{{item.article_title}}</text>
+          <view>详情请点开查看》》》》</view>
+        </navigator>
+      </view>
+    </block>
+
+  </view>
+</view>
+  <!-- //没有更多数据的提示框 -->
+<view class="cu-load  {{over}}"></view>
+

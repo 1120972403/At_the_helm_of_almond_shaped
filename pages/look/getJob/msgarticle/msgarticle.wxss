@@ -1,0 +1,32 @@
+/* pages/look/getJob/msgarticle/msgarticle.wxss */
+/* article */
+.article-style{
+  margin-top:20rpx;
+	width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding:66rpx 31rpx 80rpx;
+  background-color:#fff;
+}
+.article-style .article-title{
+  margin-bottom:16rpx;
+	font-size: 38rpx;
+	color: #000000;
+  line-height: 48rpx; 
+}
+.article-style .article-info{
+	font-size: 26rpx;
+	line-height: 48rpx;
+	color: #bfbfbf;
+  margin-bottom: 26rpx;
+}
+.article-style .article-info text{
+  margin-right:43rpx;
+}
+
+.article-style .article-content text{
+  margin-top:10rpx;
+	font-size: 28rpx;
+	line-height: 60rpx;
+	color: #666666;
+}

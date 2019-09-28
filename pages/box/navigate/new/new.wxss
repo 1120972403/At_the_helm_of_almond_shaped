@@ -1,0 +1,45 @@
+/* pages/box/navigate/new/new.wxss */
+
+page {
+  background-color: #f1f1f1;
+}
+
+.btn-flex {
+  margin: 20rpx;
+}
+
+.cu-btn {
+  margin-right: 20rpx;
+}
+
+.large {
+  font-size: 40rpx;
+  margin-left: 5rpx;
+}
+
+.right {
+  float: right;
+  margin-right: 30rpx;
+}
+/* 认证框 */
+.sign{
+  margin: 10rpx;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: white;
+  padding: 0 5rpx;
+  background-color: #0081FF;
+}
+.text-content{
+  margin: 0 30rpx;
+}
+.sign-red{
+    margin: 10rpx;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: white;
+  padding: 0 5rpx;
+  background-color: #FF0000;
+}

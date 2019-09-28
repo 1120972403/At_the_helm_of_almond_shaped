@@ -1,0 +1,12 @@
+/* pages/box/navigate/address_list/address_list.wxss */
+
+.lg {
+  font-size: 200rpx;
+}
+
+.title {
+  /* margin: 30rpx; */
+  font-size: 36rpx;
+  color: black;
+  font-weight: bold;
+}

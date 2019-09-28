@@ -1,0 +1,38 @@
+<!--pages/box/live/idles/detail/detail.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{idlesDetail.title}}</view>
+</cu-custom>
+<!-- 书籍图片 -->
+<view class="center">
+  <image class=" center img " src="{{idlesDetail.logo}}"  data-src="{{idlesDetail.logo}}" bindtap="previewImage"></image>
+</view>
+
+<!-- 描述 -->
+<view class="card">
+  <view class=" margin-left margin-top-lg title font-weight">{{idlesDetail.title}}</view>
+  <view class="margin-left margin-top-sm border-bottom">ISBN：{{idlesDetail.isbn}}</view>
+  <view class="margin-left margin-top-sm border-bottom">作者：{{idlesDetail.author_name}}</view>
+  <view class="margin-left margin-top-sm border-bottom">出版社：{{idlesDetail.publisher}}</view>
+  <view class="margin-left margin-top-sm border-bottom">出版时间：{{idlesDetail.published}}</view>
+  <view class="margin-left margin-top-sm  border-bottom">原价：￥{{idlesDetail.price}}</view>
+</view>
+
+<!-- 书本简介 -->
+
+<view class="card margin-top">
+  <view class=" margin-left margin-top-lg title">书本简介</view>
+  <view class="margin margin-top-sm border-bottom content">{{idlesDetail.description}}</view>
+</view>
+
+<view class="card margin-top">
+  <view class=" margin-left margin-top-lg title">作者备注</view>
+  <view class="margin margin-top-sm border-bottom content">
+    <view class="margin-top-sm border-bottom">交易方式：{{idlesDetail.mode}}</view>
+    <view class=" border-bottom">说明：{{idlesDetail.remark}}</view>
+  </view>
+</view>
+<view class="center margin-top-xl margin-bottom-xl">
+  <view class="cu-btn bg-green shadow round text-center" bindtap="call" data-phone="{{idlesDetail.phone}}">
+    <text class="cuIcon-dianhua text-red "></text> 联系购买</view>
+</view>    

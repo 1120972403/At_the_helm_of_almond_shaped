@@ -1,0 +1,12 @@
+/* pages/publish/home/home.wxss */
+
+
+.color{
+  
+  background-color:  #207F4B;
+}
+
+
+.content{
+  text-align:right;
+}

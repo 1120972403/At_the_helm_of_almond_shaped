@@ -1,0 +1,82 @@
+<!--pages/box/live/lostfound/addlost/addlost.wxml-->
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+  <view slot="content">发布信息</view>
+</cu-custom>
+<!-- 内容区  -->
+<!-- 文字内容 -->
+<form bindsubmit="formSubmit" class='cirle' bindreset="formReset">
+  <view class="cu-form-group">
+    <view class="title">标题</view>
+    <input placeholder="输入物品标题,越突出重点的越容易实现" name="title"></input>
+  </view>
+  <view class="cu-form-group ">
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" name="description" value="{{opinion}}" bindinput="textareaAInput" placeholder="请描述信息内容......"></textarea>
+  </view>
+
+  <!-- 图片上传 -->
+  <view class="card">
+    <view class="cu-form-group" style="border-top:0;">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white " style="min-height:0;">
+      <view class="action">
+        图片上传(选填)
+      </view>
+      <view class="action">
+        {{imgList.length}}/4
+      </view>
+    </view>
+
+
+
+    <view class="cu-form-group margin-top-xs">
+      <view class="title">发布类别</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" name="type">
+        <view class="picker" name="type">
+          {{index?picker[index]:'请选择'}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group margin-top-xs">
+      <view class="title">选择分类</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+          {{index?picker[index]:'请选择'}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group margin-top-xs">
+      <view class="title">发布地址</view>
+      <input name="location" placeholder="请选择或输入地址" value=""></input>
+      <!-- value="({{choosen.longitude}},{{choosen.latitude}})" -->
+      <text class="cuIcon-locationfill text-orange" bindtap="chooseLocation"></text>
+    </view>
+
+    <view class="cu-form-group  margin-top-xs">
+      <view class="title">联系方式</view>
+      <input placeholder="请输入联系方式..." name="phone" type="number" maxlength="11"></input>
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-blue">
+          +86
+        </view>
+        <view class="cu-tag line-blue">
+          中国大陆
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="center margin-top-xl margin-bottom-xl">
+    <button class="cu-btn bg-green shadow round text-center" formType="submit">立即发布</button>
+    <button class="cu-btn bg-grey shadow round text-center margin-left" formType="reset">重置</button>
+  </view>
+</form>

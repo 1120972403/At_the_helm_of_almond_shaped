@@ -1,0 +1,49 @@
+<!--pages/look/weather/weather.wxml-->
+<!--pages/user/home/getweather/getweather.wxml-->
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+  <view slot="content">最近三天天气</view>
+</cu-custom>
+<view class="container">
+  <view class="weather yesterday">
+    <view>
+      <view class='date'>今天</view>
+      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{today.tmp_min}}℃~{{today.tmp_max}}℃</view>
+      <view class='cond_txt'>{{today.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{todyIcon}}'class="cloud" ></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+  <view class="weather today">
+    <view>
+      <text>明天</text>
+      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{tomorrow.tmp_min}}℃~{{tomorrow.tmp_max}}℃</view>
+      <view class='cond_txt'>{{tomorrow.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{tomorrowIcon}}' class="cloud"></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+  <view class="weather tomorrow">
+    <view>
+      <text>后天</text>
+      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{afterTomor.tmp_min}}℃~{{afterTomor.tmp_max}}℃</view>
+      <view class='cond_txt'>{{afterTomor.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{afterTomorIcon}}' class="cloud"></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+</view>

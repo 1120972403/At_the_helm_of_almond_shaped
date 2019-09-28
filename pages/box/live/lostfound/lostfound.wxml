@@ -1,0 +1,139 @@
+<!--pages/box/live/lostfound/lostfound.wxml-->
+<cu-custom bgColor="bg-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">失物招领</view>
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+<!-- <view class="cu-bar search  card">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="请搜索书名关键字" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow-blur round">搜索</button>
+  </view>
+</view> -->
+<!-- 导航 -->
+<scroll-view scroll-x class="bg-green nav ">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}} " bindtap="tabSelect" data-id="0">
+    <text class="cuIcon-apps"></text> 全部
+  </view>
+  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-upstagefill"></text> 报失
+  </view>
+  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+    <text class="cuIcon-clothesfill"></text> 招领
+  </view>
+  <!-- <view class="cu-item {{3==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="3">
+    <text class="cuIcon-clothesfill"></text> 我的发布
+  </view> -->
+</scroll-view>
+
+
+
+<view hidden="{{TabCur != 0}}" class="image">
+
+  <block wx:for="{{lostfoundList}}" wx:key="*this">
+    <navigator open-type="navigate" hover-class='none' url="./detail/detail?id={{item.id}}" class="card ">
+      <view class="title">{{item.title}}</view>
+      <view class="cu-tag bg-blue bq" wx:if='{{item.type == "lost" }}'>报失</view>
+      <view class="cu-tag bg-orange bq" wx:else>招领</view>
+      <view class="content">
+        <view>
+          <text class="cuIcon-friendfavor lg text-black margin-left"></text>
+          
+          <text class="margin-left-xs" wx:if="{{flag}}">{{flag}}</text>
+                    <text class="margin-left-xs" wx:else>{{item.stu_name}}</text>
+        </view>
+        <view>
+          <text class="cuIcon-calendar lg text-black margin-left"></text>
+          <text class="margin-left-xs">{{item.create_time}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+</view>
+
+
+
+
+
+
+<view hidden="{{TabCur != 1}}">
+
+
+  <block wx:for="{{lostfoundList}}" wx:key="*this">
+    <navigator open-type="navigate" hover-class='none' url="./detail/detail?id={{item.id}}" class="card ">
+      <view class="title">{{item.title}}</view>
+      <view class="content">
+        <view>
+          <text class="cuIcon-friendfavor lg text-black margin-left"></text>
+          <text class="margin-left-xs">{{item.stu_name}}</text>
+        </view>
+        <view>
+          <text class="cuIcon-calendar lg text-black margin-left"></text>
+          <text class="margin-left-xs">{{item.create_time}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+</view>
+
+
+
+
+<view hidden="{{TabCur != 2}}">
+  <block wx:for="{{lostfoundList}}" wx:key="*this">
+    <navigator open-type="navigate" hover-class='none' url="./detail/detail?id={{item.id}}" class="card ">
+      <view class="title">{{item.title}}</view>
+      <view class="content">
+        <view>
+          <text class="cuIcon-friendfavor lg text-black margin-left"></text>
+          <text class="margin-left-xs">{{item.stu_name}}</text>
+        </view>
+        <view>
+          <text class="cuIcon-calendar lg text-black margin-left"></text>
+          <text class="margin-left-xs">{{item.create_time}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+
+<!-- //没有更多数据的提示框 -->
+<view class="cu-load  {{over}}"></view>
+
+<!--浮动导航-->
+<import src="/pages/common/fixedNav/fixedNav.wxml" />
+<view class='item' bindtap='add'>
+  <template is="fixedNav" />
+</view>
+
+<!-- <import src="/pages/common/goauth/goauth.wxml" />
+<template is="goauth" /> -->
+
+<!-- 检查是否可以已经认证 -->
+<view class="cu-modal {{modalName=='goauth'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl">
+      由于国家倡导净网行动，您尚未登录无法享受部分功能，请前往认证！
+    </view>
+    <view class="cu-bar bg-white" >
+      <navigator url="/pages/mine/auth/auth" open-type="navigate" hover-class='none' class="action margin-0 flex-sub text-green solid-left" >
+       前往认证
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+

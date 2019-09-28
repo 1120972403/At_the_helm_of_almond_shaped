@@ -1,0 +1,128 @@
+/* pages/box/other/plant/plant.wxss */
+
+.camera {
+  width: 100%;
+  height: 800rpx;
+}
+
+.camera1 {
+  width: 100%;
+  height: 800rpx;
+}
+
+.cameras {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150rpx;
+}
+
+.kuang {
+  width: 500rpx;
+  height: 500rpx;
+  border: 5px solid #b0b8ac;
+}
+
+.img {
+  width: 100%;
+  height: 75%;
+}
+
+.tar {
+  width: 100%;
+  height: 25%;
+}
+
+.tar-text {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.paishe {
+  display: block;
+  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  margin-top: -8px;
+}
+
+.weui-grid {
+  border: 0;
+}
+
+/* 动画 */
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 800rpx;
+}
+
+.animation-list {
+  width: 100%;
+  height: 800rpx;
+  background: linear-gradient(to bottom, rgba(216, 179, 255, 0), rgba(216, 179, 255, 1));
+  position: relative;
+  top: -850rpx;
+  animation: myfist 1s linear 0.5s infinite alternate;
+}
+
+/* 开始执行动画 */
+
+@keyframes myfist {
+  0% {
+    background: linear-gradient(to bottom, rgba(216, 179, 255, 0), rgba(216, 179, 255, 1));
+    left: 0;
+    top: -800rpx;
+  }
+
+  25% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  50% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  75% {
+    left: 0;
+    top: 50rpx;
+  }
+
+  100% {
+    left: 0;
+    top: -800rpx;
+  }
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.33333333%;
+  box-sizing: border-box;
+}
+
+.weui-grid__icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.weui-grid__label {
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+  color: #000;
+  font-size: 30rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

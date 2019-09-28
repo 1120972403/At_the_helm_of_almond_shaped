@@ -1,34 +1,84 @@
-page {
-  background-color: #f9f9f8;
+.bg {
+  color: white;
 }
 
-/* 头部信息 */
-
-.avatar-wrapper {
-  background: #1b82d1;
-  padding: 25px 0;
+.text-shadow {
+  text-shadow: none;
+  font-weight:normal;
+  border-bottom:1px solid gainsboro; 
 }
 
-.avatar-wrapper .avatar {
-  margin: 0 auto;
-  text-align: center;
+/* mine-top */
+
+.mine-top {
+  height: 378rpx;
+  position: relative;
 }
 
-.avatar-wrapper .avatar image {
-  width: 100px;
-  height: 100px;
+.mine-bg {
+  border-radius: 0 0 5% 5%;
 }
 
-.avatar-wrapper .text {
-  text-align: center;
+.mine-info {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  height: 116rpx;
+  top: 167rpx;
+  left: 0;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.head-img {
+  width: 116rpx;
+  height: 116rpx;
+  vertical-align: middle;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+}
+
+.mine-top .right {
+  margin-left: 23rpx;
+  display: flex;
+  flex-direction: column;
+  height: 106rpx;
+  justify-content: space-between;
+}
+
+.mine-name {
+  margin-left: 16rpx;
+  font-size: 36rpx;
+  line-height: 1;
+  letter-spacing: 1.8rpx;
   color: #fff;
 }
 
-.weui-cell__hd image {
-  margin-right: 5px;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
+.mine-number {
+  padding: 0 23rpx;
+  height: 52rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 26rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 52rpx;
+}
+
+.mine-number1 {
+  padding: 0 23rpx;
+  height: 52rpx;
+  background-color: #39b54a;
+  border-radius: 26rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 52rpx;
+}
+
+.border-left {
+  border-right: 1px dotted gainsboro;
 }
 
 /* 登录按钮 */
@@ -37,6 +87,12 @@ page {
   margin: 0 auto;
 }
 
-.text-xxl{
+.text-xxl {
   font-size: 35rpx;
+}
+
+.cu-list {
+  background-color: white;
+  color: white;
+  background: white;
 }

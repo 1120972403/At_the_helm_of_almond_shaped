@@ -1,34 +1,97 @@
-/*首页跑马灯效果*/
-@keyframes around {
-  from {
-   margin-left: 100%;
-  }
-  to {
-   /* var接受传入的变量 */
-   margin-left: var(--marqueeWidth--);
-  }
- }
- 
-.marquee_container{
-  background-color:#fff;
-  height: 50rpx;
-  line-height: 44rpx;
-  position: relative;
+.tui-rolling-news {
   width: 100%;
-  margin-top:0rpx;
+  padding: 12rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
-.marquee_container:hover{
-  /* 不起作用 */
-  animation-play-state: paused;
+
+.img {
+  width: 400rpx;
+  height: 300rpx;
 }
-.marquee_text{
-  /* color:black; */
-  font-size: 30rpx;
-  display: inline-block;
+
+video {
+  width: 300px;
+  height: 200px;
+}
+
+.tui-swiper {
+  margin-left: 10rpx;
+  border-radius: 5px;
+  font-size: 28rpx;
+  height: 50rpx;
+  flex: 1;
+  /* background-color:#F1F1F1; */
+}
+
+.tui-swiper-item {
+  display: flex;
+  align-items: center;
+}
+
+.tui-news-item {
+  line-height: 28rpx;
   white-space: nowrap;
-  animation-name: around;
-  animation-duration: 10s;  /*过渡时间*/
-  animation-iteration-count: infinite;
-  animation-timing-function:linear;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 20rpx;
 }
-/*首页跑马灯效果*/
+
+/* 天气 */
+.container {
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ padding: 10px 15px;
+ box-sizing: border-box;
+} 
+.weather{
+ height: 110px;
+ width: 100%;
+ margin-bottom: 10px;
+ border-radius: 5px;
+ color: #FFF;
+ padding: 5PX 15px;
+ display: flex;
+ font-size: 14px;
+ box-sizing: border-box;
+}
+.weather>view{
+ flex: 1;
+}
+.weather>view>view{
+ margin: 5px 0;
+}
+.yesterday{
+ background-color: #30BCAF;
+}
+.today{
+ background-color: #78A4be;
+}
+.tomorrow{
+ background-color: #FCB654;
+}
+.location,.cond_txt{
+ font-size: 14px;
+}
+.date,.tmp{
+ font-weight: bold;
+}
+.weather_icon{
+ text-align: center;
+ height: 65px;
+}
+.weather_icon image{
+ width: 75px;
+ height: 100%;
+}
+.lastUpdateDate{
+ font-size: 10px;
+ text-align: center;
+}

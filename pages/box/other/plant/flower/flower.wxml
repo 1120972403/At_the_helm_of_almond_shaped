@@ -1,0 +1,44 @@
+<!--pages/box/other/plant/flower/flower.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">为您识别</view>
+</cu-custom>
+
+<!-- 用户上传的图片做背景
+为你识别几种 下面五张可能情况的植物
+有继续识别的 和生成美图的按钮
+ -->
+<view class="tips dong text-align">
+    <view class="flag">为您识别出了
+    <text class="datalength">{{list.length}}</text> 种
+  </view>
+</view>
+
+<view class="flower-wrapper" >
+  <image class="flower-show" src="{{img}}" mode="aspectFill"></image>
+  <swiper bindchange="currentChange" class="flowerbox-wrapper" nextMargin="27rpx" previousMargin="27rpx">
+    <swiper-item class="swiperItem"  wx:for="{{list}}" wx:for-index="indexs" wx:key="item">
+      <scroll-view scrollY scrollTop="{{scrollTop}}" scrollX="false" style="height:100% ;transform: scaleX(0.96);">
+        <view style="top:{{flowerBoxTop}}">
+          <view class="flower-box">
+          <view>准确率：{{item.score}}</view>
+            <image class="coverImage" src="{{item.baike_info.image_url}}"></image>
+            <view class="title">
+              <view style="font-size: 50rpx;display: inline-block;">{{item.name}}</view>
+            </view>
+            <view class="wrapper">
+              <text class="text" style="margin-top: 20rpx">{{item.baike_info.description}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<view class="flex solid-bottom padding justify-center bottom-btn">
+
+  <view class="cu-btn lines-green radius padding-sm margin-xs lg" bindtap="back">继续识别</view>
+
+  <view class="cu-btn bg-green radius padding-sm margin-xs lg">生成美图</view>
+</view>

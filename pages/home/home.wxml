@@ -6,25 +6,29 @@
 
 <view style='height:100rpx;'></view>
 <view class="cu-bar tabbar bg-white foot shadow">
-    <view bindtap='click' data-name="look" class="action {{type=='look'?'text-green':'text-gray'}}">
-      <view class="cuIcon-homefill"></view> 速览
-    </view>
-    <view bindtap='click' data-name="new" class="action  {{type=='new'?'text-green':'text-gray'}}">
-      <view class="cuIcon-similar"></view> 新鲜事
-    </view>
-    <view class="action text-gray add-action">
-      <button class="cu-btn cuIcon-add bg-green shadow" bindtap='topublish'></button>
-      发布
-    </view>
-    <view bindtap='click' data-name="box" class="action  {{type=='box'?'text-green':'text-gray'}}">
-      <view class="cuIcon-message">
-      </view>
-      百宝箱
-    </view>
-    <view bindtap='click' data-name="mine" class="action  {{type=='mine'?'text-green':'text-gray'}}">
-      <view class="cuIcon-my">
-        <!-- <view class="cu-tag badge"></view> -->
-      </view>
-      我的
-    </view>
+  <view bindtap='click' data-name="look" class="action {{type=='look'?'text-green':'text-gray'}}">
+    <view class="cuIcon-homefill"></view> 速览
   </view>
+  <view bindtap='click' data-name="new" class="action  {{type=='new'?'text-green':'text-gray'}}">
+    <view class="cuIcon-similar"></view> 新鲜事
+  </view>
+
+
+  <view class="action text-gray add-action">
+    <button class="cu-btn cuIcon-add bg-green shadow" bindtap='topublish'></button>
+    发布
+  </view>
+
+
+
+  <view bindtap='click' data-name="box" class="action  {{type=='box'?'text-green':'text-gray'}}">
+    <view class="cuIcon-message">
+    </view>
+    百宝箱
+  </view>
+  <view bindtap='click' data-name="mine" class="action  {{type=='mine'?'text-green':'text-gray'}}">
+    <view class="cuIcon-my">
+    </view>
+    我的
+  </view>
+</view>

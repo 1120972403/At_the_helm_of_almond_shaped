@@ -1,0 +1,87 @@
+<!--pages/look/newlist/newlist.wxml-->
+<cu-custom bgColor="bg-blue" isCustom="{{true}}">
+  <view slot="content">校闻速递</view>
+</cu-custom>
+
+<!-- 导航 -->
+<scroll-view scroll-x class="bg-blue nav ">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}} " bindtap="tabSelect" data-id="0">
+    <text class="cuIcon-apps"></text> 学校要闻
+  </view>
+  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-upstagefill"></text>教务公告
+  </view>
+</scroll-view>
+
+<view hidden="{{TabCur != 0}}">
+<view class="index-msg ">
+  <view class="index-title-top">
+    <text class="index-title">学校要闻</text>
+    <navigator open-type="switchTab" url="/pages/msg/msg">
+      <text>查看更多></text>
+    </navigator>
+  </view>
+  <view class="index-msg-list msg-list-style">
+    <block wx:for="{{xyyw}}" wx:key="*this">
+      <navigator url="./newdetail/newdetail?id={{item.id}}" class="no-border-top index-msg-list-new">
+        <text class="index-msg-title">{{index+1}}.{{item.article_title}}</text>
+        <text wx:if="{{index==0}}" class="index-msg-tag">new</text>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+<view class="index-msg ">
+  <view class="index-title-top">
+    <text class="index-title">综合新闻</text>
+    <navigator open-type="switchTab" url="/pages/msg/msg">
+      <text>查看更多></text>
+    </navigator>
+  </view>
+  <view class="index-msg-list msg-list-style">
+      <block wx:for="{{zhxw}}" wx:key="*this">
+     <navigator url="./newdetail/newdetail?id={{item.id}}" class="no-border-top index-msg-list-new">
+        <text class="index-msg-title">{{index+1}}.{{item.article_title}}</text>
+        <text wx:if="{{index==0}}" class="index-msg-tag">new</text>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+<view class="index-msg ">
+  <view class="index-title-top">
+    <text class="index-title">学术看点</text>
+    <navigator open-type="switchTab" url="/pages/msg/msg">
+      <text>查看更多></text>
+    </navigator>
+  </view>
+  <view class="index-msg-list msg-list-style">
+      <block wx:for="{{xshd}}" wx:key="*this">
+     <navigator url="./newdetail/newdetail?id={{item.id}}" class="no-border-top index-msg-list-new">
+        <text class="index-msg-title">{{index+1}}.{{item.article_title}}</text>
+        <text wx:if="{{index==0}}" class="index-msg-tag">new</text>
+      </navigator>
+    </block>
+  </view>
+</view>
+</view>
+<view hidden="{{TabCur != 1}}">
+<view class="index-msg ">
+  <view class="index-title-top">
+    <text class="index-title">教务公告</text>
+    <navigator open-type="switchTab" url="/pages/msg/msg">
+      <text>查看更多></text>
+    </navigator>
+  </view>
+  <view class="index-msg-list msg-list-style">
+      <block wx:for="{{jwgg}}" wx:key="*this">
+     <navigator url="./newdetail/newdetail?id={{item.id}}" class="no-border-top index-msg-list-new">
+        <text class="index-msg-title">{{index+1}}.{{item.article_title}}</text>
+        <text wx:if="{{index==0}}" class="index-msg-tag">new</text>
+      </navigator>
+    </block>
+  </view>
+</view>
+</view>
+
+

@@ -1,0 +1,20 @@
+.lg {
+  font-size: 200rpx;
+}
+
+.title {
+  /* margin: 30rpx; */
+  font-size: 36rpx;
+  color: black;
+  font-weight: bold;
+}
+.margin-top{
+  border-radius: 10px
+}
+image{
+  width: 140rpx;
+  height: 60rpx;
+}
+.cb{
+  transform: scale(0.7,0.7);
+}

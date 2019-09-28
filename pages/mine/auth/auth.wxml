@@ -1,0 +1,68 @@
+<!--pages/mine/auth/auth.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">安全认证</view>
+</cu-custom>
+
+<!-- 头部信息 -->
+<view class="margin-top-lg margin-bottom-lg">
+  <view class="cuIcon-wefill lg text-red center"></view>
+  <view class="title center">教务系统登录认证</view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="margin-xl">
+    <view class="cu-form-group margin-top">
+      <view class="title">学号：</view>
+      <input placeholder="输入您的学号" name="account" type="number" maxlength="12"></input>
+    </view>
+    <view class="cu-form-group margin-top">
+      <view class="title">密码：</view>
+      <input placeholder="输入您的密码" type="password" name="pwd"></input>
+    </view>
+    <view class="cu-form-group margin-top">
+      <view class="title">验证码：</view>
+      <input placeholder="输入右侧中的验证码" name="verify"></input>
+      <!-- //先请求验证码再显示验证码 -->
+      <image src="{{img}}" bindtap="getCode"></image>
+    </view>
+
+    <view class=" margin-top text-right">
+
+      <test class="margin-left-xs">登录须知</test>
+      <test class="margin-left-sm text-blue text-bold" bindtap="goto">《用户协议》</test>
+    </view>
+  </view>
+
+  <view class="center margin-top-xl margin-bottom-xl">
+    <button class="cu-btn bg-green shadow round text-center" formType="submit">确认认证</button>
+    <button class="cu-btn bg-grey shadow round text-center margin-left" formType="reset">重置</button>
+  </view>
+</form>
+
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl">
+      {{error}}
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green solid-left" bindtap="again">重新登录</view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl">
+      恭喜您，教务系统认证成功！欢迎进入奇妙之旅
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green solid-left" bindtap="bego">前往使用</view>
+    </view>
+  </view>
+</view>

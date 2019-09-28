@@ -1,0 +1,110 @@
+<!--pages/box/live/idles/idles.wxml-->
+<cu-custom bgColor="bg-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">闲置物品</view>
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+ 
+<!-- 导航 -->
+<scroll-view scroll-x class="bg-green nav ">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}} " bindtap="tabSelect" data-id="0">
+    <text class="cuIcon-apps"></text> 最新上架
+  </view>
+  <!-- <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-upstagefill"></text>我的发布
+  </view> -->
+</scroll-view>
+
+<view class="cu-bar search  card">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="请搜索书名关键字" value="{{value}}" bindchange='valuechange' confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow-blur round" bindtap='search'>搜索</button>
+  </view>
+</view>
+
+<view hidden="{{TabCur != 0}}" class="image">
+
+
+  
+  <block wx:for="{{idlesList}}" wx:key="*this">
+    <navigator open-type="navigate" hover-class='none' url="./detail/detail?id={{item.id}}" class="card">
+      <view class="flex  p-xs margin-bottom-sm mb-sm">
+        <!-- 图片 -->
+        <image class="flex-sub  padding-sm margin-left-xs radius img" src="{{item.logo}}"></image>
+
+        <!-- 描述 -->
+        <view class="flex-twice radius">
+          <view class=" margin-top-lg title">{{item.title}}</view>
+          <view class="margin-top-sm border-bottom">{{item.author_name}}·{{item.publisher}}·{{item.published}}</view>
+          <view class="flex margin-top">
+            <view class="cu-avatar round" style="background-image:url('{{item.avatarUrl}}');"></view>
+            <text class="center margin-left-sm red">￥{{item.new_price}}</text>
+            <text class="center margin-left-xl red text-lg">{{item.discount}}折</text>
+          </view>
+          <view class="margin-top-sm">发布时间：{{item.create_time}}</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- //没有更多数据的提示框 -->
+<view class="cu-load  {{over}}"></view>
+</view>
+
+
+
+<view hidden="{{TabCur != 1}}">
+  <navigator open-type="navigate" hover-class='none' url="./detail/detail" class="card ">
+
+  </navigator>
+</view>
+
+
+
+
+<!--浮动导航-->
+<import src="/pages/common/fixedNav/fixedNav.wxml" />
+<view class='item' bindtap='add'>
+  <template is="fixedCode" />
+</view>
+ 
+
+
+<!-- 扫码失败时要显示的内容 -->
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl">
+      请检查你要扫码的二维码
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-red solid-left" bindtap="hideModal">取消扫码</view>
+      <view class="action margin-0 flex-sub text-green solid-left" bindtap="add">再次扫码</view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 检查是否可以已经认证 -->
+<view class="cu-modal {{modalName=='goauth'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl">
+      由于国家倡导净网行动，您尚未登录无法享受部分功能，请前往认证！
+    </view>
+    <view class="cu-bar bg-white" >
+      <navigator url="/pages/mine/auth/auth" open-type="navigate" hover-class='none' class="action margin-0 flex-sub text-green solid-left" >
+       前往认证
+      </navigator>
+    </view>
+  </view>
+</view>

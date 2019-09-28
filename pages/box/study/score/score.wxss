@@ -1,0 +1,4 @@
+/* pages/box/study/score/score.wxss */
+page{
+  background-color: white;
+}

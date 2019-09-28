@@ -1,0 +1,76 @@
+/* pages/look/newlist/newlist.wxss */
+/* index-msg */
+
+.index-active,
+.index-msg{
+
+  margin: 20px;
+}
+.index-title-top{
+  display: flex;
+  justify-content:space-between;
+  margin-top:53rpx;
+}
+.index-title {
+	width: 50%;
+	height: 34rpx;
+	font-size: 34rpx;
+	color: #f34a48;
+}
+.index-title-top navigator text{
+	width: 120rpx;
+	height: 26rpx;
+	font-size: 26rpx;
+	color: #bfbfbf;
+}
+
+
+.msg-list-style{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:32rpx;
+  padding: 19rpx 0;
+	background-color: #ffffff;
+	box-shadow: 0rpx 10rpx 29.1rpx 0.9rpx 
+		rgba(49, 49, 49, 0.07);
+	border-radius: 10rpx;
+}
+.msg-list-style navigator{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	width: 642rpx;
+  padding: 31rpx 0 29rpx;
+	border-bottom: 1px solid #e5e5e5;
+}
+.msg-list-style .index-msg-title{
+  width: 454rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+	font-size: 30rpx;
+	color: #434343;
+}
+.index-msg-list-new .index-msg-tag{
+  display: block;
+}
+.index-msg-list-new .index-msg-title{
+  width: 600rpx;
+}
+
+.index-msg-tag{
+  display: none;
+	width: 75rpx;
+	height: 36rpx;
+  line-height:auto;
+  text-align: center; 
+  border-radius: 18rpx;
+  background:#f34a48;
+  color:#fff;
+  font-size: 24rpx;
+}
+.index-msg-date{
+	font-size: 28rpx;
+	color: #bfbfbf;
+}

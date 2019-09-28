@@ -1,1 +1,32 @@
 /* pages/new/comment/comment.wxss */
+.text-content{
+  margin: 2rpx 30rpx;
+}
+.border{
+  border: 1px solid gainsboro;
+}
+.lg{
+  font-size: 40rpx;
+}
+/* 认证框 */
+.sign{
+  margin: 10rpx;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: white;
+  padding: 0 5rpx;
+  background-color: #0081FF;
+}
+.text-content{
+  margin: 2rpx 30rpx;
+}
+.sign-red{
+  margin: 10rpx;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: white;
+  padding: 0 5rpx;
+  background-color: #FF0000;
+}

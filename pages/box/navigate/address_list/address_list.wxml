@@ -1,0 +1,201 @@
+<!--pages/box/navigate/address_list/address_list.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">校园通讯录</view>
+</cu-custom>
+
+<!-- 头部信息 -->
+<view class="margin-top-lg margin-bottom-lg">
+  <view class="cuIcon-addressbook lg text-red center"></view>
+  <view class="title center">校园通讯录</view>
+  <text class="center">(点击可直接拨打)</text>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800183">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">校医院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800183</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-82722252">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">成都市第五人民医院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-82722252</view>
+  </view>
+</view>
+
+<view class="card"  bindtap="call" data-phone="028-61801678">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">医学信息工程学院/信息与教育技术中心</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61801678</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800555">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">后勤基建处/后勤服务中心</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800555</view>
+  </view>
+</view>
+<view class="card" bindtap="call" data-phone="028-61800183">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">计划财务处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800183</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-87714869">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">研究生院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-87714869</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800103">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">科技处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800103</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800076">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">教务处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800076</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800112">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">人事处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800112</view>
+  </view>
+</view>
+
+
+<view class="card" bindtap="call" data-phone="028-61800110">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">保卫处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800110</view>
+  </view>
+</view>
+
+
+<view class="card" bindtap="call" data-phone="{{lostfoundDetail.phone}}">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">党委学生工作部/学生处/招生就业处</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800090</view>
+  </view>
+</view>
+
+
+<view class="card" bindtap="call" data-phone="028-61800067">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">纪检监察处 </view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800067</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-61800223">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">基础医学院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800223</view>
+  </view>
+</view>
+
+
+<view class="card" bindtap="call" data-phone="028-61800231">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">药学院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-61800231</view>
+  </view>
+</view>
+
+<view class="card" bindtap="call" data-phone="028-86115270">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">针灸推拿学院/第三附属医院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-86115270</view>
+  </view>
+</view>
+<view class="card" bindtap="call" data-phone="028-85229807">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">第二临床医学院/第二附属医院</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-85229807</view>
+  </view>
+</view>
+<view class="card" bindtap="call" data-phone="028-87716140">
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-friend text-green "></text>部门</view>
+    <view class="flex-twice  padding-sm  radius">图书馆</view>
+  </view>
+  <view class="flex  p-xs  mb-sm margin-left-xl">
+    <view class="flex-sub  padding-sm  radius"><text class="cuIcon-dianhua text-green "></text>联系方式</view>
+    <view class="flex-twice  padding-sm  radius">028-87716140</view>
+  </view>
+</view>
+

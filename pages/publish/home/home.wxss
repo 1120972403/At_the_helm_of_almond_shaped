@@ -2,6 +2,9 @@
 page {
   background-color: #f9f9f8;
 }
+.border{
+  border:1px solid gainsboro;
+}
 .margin-top{
   margin-top: 5rpx;
 }
