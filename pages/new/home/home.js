@@ -1,6 +1,7 @@
 // pages/car/car.js
 const app = getApp()
 const apiUrl = require('../../../config.js').apiUrl
+// const imgUrl = require('../../../config.js').imgUrl
 Component({
   options: {
     addGlobalClass: true,
@@ -10,6 +11,8 @@ Component({
    */
   data: {
     car: true,
+    //这里直接在前端渲染添加域名
+    imgUrl: require('../../../config.js').imgUrl
   },
   attached() {
 

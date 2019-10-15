@@ -5,13 +5,13 @@
 </cu-custom>
 
 <!-- 图片背景 -->
-<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  wx:if='{{imgs!=""}}'>
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" wx:if='{{imgs!=""}}'>
   <swiper-item wx:for="{{imgs}}" wx:key>
-    <image src="{{item}}" mode="aspectFill" ></image>
+    <image src="{{imgUrl}}{{item}}" mode="aspectFill" data-src="{{imgs}}" bindtap="previewImage" lazy-load></image>
   </swiper-item>
 </swiper>
 
- <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569260920737&di=5fdeabe6e0172a4553e701628244102a&imgtype=0&src=http%3A%2F%2Fww1.sinaimg.cn%2Fwap720%2F006fj7vWgw1f4zbckh32ij30k00c0q3r.jpg" wx:else  style="width:100%;" ></image>
+<image wx:else src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569260920737&di=5fdeabe6e0172a4553e701628244102a&imgtype=0&src=http%3A%2F%2Fww1.sinaimg.cn%2Fwap720%2F006fj7vWgw1f4zbckh32ij30k00c0q3r.jpg" style="width:100%;" lazy-load></image>
 
 <!-- 内容区域 -->
 <view class="card">
@@ -54,5 +54,5 @@
 <view class="center margin-top-xl margin-bottom-xl">
   <view class="cu-btn bg-green shadow round text-center" bindtap="call" data-phone="{{lostfoundDetail.phone}}">
     <text class="cuIcon-dianhua text-red "></text> 联系申领</view>
+    <button class="cu-btn bg-yellow shadow round text-center margin-left" open-type="share">分享</button> 
 </view>
- 

@@ -11,8 +11,10 @@ Page({
     xyyw:[],
     zhxw:[],
     xshd:[],
+    hidden: false,
     TabCur: 0,
-    scrollLeft: 0,   
+    scrollLeft: 0,  
+    CustomBar: app.globalData.CustomBar, 
   },
   tabSelect(e) {
     this.setData({
@@ -41,7 +43,11 @@ Page({
           xshd: xshd,
           jwgg: jwgg
         })
-        
+        setTimeout(function () {
+          that.setData({
+            hidden: true
+          })
+        }, 300)
       }
       
 

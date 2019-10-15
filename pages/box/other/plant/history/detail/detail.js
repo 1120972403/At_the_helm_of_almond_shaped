@@ -1,14 +1,14 @@
 // pages/box/other/plant/history/detail/detail.js
 const app = getApp()
 const apiUrl = require('../../../../../../config.js').apiUrl
-const url = require('../../../../../../config.js').url
+const url = require('../../../../../../config.js').imgUrl
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+id:0
   },
 
   /**
@@ -16,6 +16,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this 
+    that.setData({
+      id: options.id
+    })
     wx.request({
       url: apiUrl +'plant/hisdetail?id='+options.id,
       success: (res) => {
@@ -75,7 +78,22 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    return {
+      title: '“执掌杏林”--识别结果分享！',
+      path: '/pages/box/other/plant/history/detail/detail?id=' + this.data.id,
 
+      success: function (shareTickets) {
+        console.info(shareTickets + '成功');
+        // 转发成功
+      },
+      fail: function (res) {
+        console.log(res + '失败');
+        // 转发失败
+      },
+      complete: function (res) {
+        // 不管成功失败都会执行
+      }
+    }
   }
 })

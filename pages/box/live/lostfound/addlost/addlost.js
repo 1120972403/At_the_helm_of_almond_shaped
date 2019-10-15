@@ -1,6 +1,5 @@
 const app = getApp()
 const apiUrl = require('../../../../../config.js').apiUrl
-const url = require('../../../../../config.js').url
 Page({
   /**
    * 页面的初始数据
@@ -90,10 +89,9 @@ Page({
       })
     } else {
       //***********提交前将地址传到数据库 ***********
-      var imgUrls = that.data.imgUrls.replace(/..\/public\//gi, url)
-      console.log(imgUrls);
-      console.log('type',type)
-      console.log("存储的返回数组", that.data.imgUrls)
+      if (that.data.imgUrls != '') {
+        var imgUrls = that.data.imgUrls.replace(/..\/public/gi, '')
+      }
       wx.request({
         url: apiUrl + 'lost_found/addLostfound',
         header: {
@@ -116,7 +114,10 @@ Page({
               icon: 'success',
               duration: 1500
             })
-            wx.navigateBack();
+            setTimeout(function () {
+              wx.navigateBack();
+            }, 1500)
+    
           } else {
             wx.showToast({
               title: '提交失败！！！',
@@ -194,7 +195,7 @@ Page({
     console.log(e)
     var index = e.currentTarget.dataset.index
     wx.showModal({
-      title: '召唤师',
+      title: '提示',
       content: '确定要删除这段回忆吗？',
       cancelText: '再看看',
       confirmText: '再见',

@@ -5,11 +5,12 @@ Page({
 
   /**
    * 页面的初始数据
-   */
+   */ 
   data: {
     getlist:[],
     isLoad: true,
-    page:1
+    page:1,
+    hidden: false
   },
   //数据请求
   _getList(page) {
@@ -43,9 +44,10 @@ Page({
         //加载样式flase
         setTimeout(() => {
           that.setData({
-            isLoad: false
+            isLoad: false,
+            hidden: true
           })
-        }, 1000)
+        }, 300)
       }
     })
 

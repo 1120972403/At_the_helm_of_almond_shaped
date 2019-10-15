@@ -1,2 +1,20 @@
 <!--pages/mine/about/about.wxml-->
-<text>pages/mine/about/about.wxml</text>
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关于</view>
+</cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于执掌杏林</view>
+  <view class='text-content'>
+    <view>Hi！~欢迎使用关于执掌杏林！</view>
+    <view class='margin-top-sm'>该项目是我个人借助ColoUI开发的一款高颜值的微信小程序。这个项目不仅UI美观，还有一些针对学生们使用的生活学习服务应用。现在项目还在完善中，未来将继续由我进行项目维护，直到加入更加优秀的人才为止！如果您对项目感兴趣欢迎联系我！</view>
+    
+    <view class='margin-top-sm'>“执掌杏林”是一款免费的小程序，如果这个小程序有帮到你，或者你觉得很赞，可以扫描赞赏码给作者支持一下！</view>
+<view class='margin-top-sm'>更多功能敬请期待！</view>
+    <view class='margin-top-sm'>开发者邮箱：1120972403@qq.com</view>
+    <image src="{{url}}" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveImg' class='img' mode='widthFix'></image>
+    <view style="text-align: center;">1、长按保存二维码图片</view>
+    <view style="text-align: center;">2、打开微信扫一扫，选择相册图片</view>
+
+  </view>
+</view>

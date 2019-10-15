@@ -5,10 +5,10 @@
 </cu-custom>
 <!-- 书籍图片 -->
 <view class="center">
-  <image class=" center img " src="{{idlesDetail.logo}}"  data-src="{{idlesDetail.logo}}" bindtap="previewImage"></image>
+  <image class=" center img " src="{{idlesDetail.logo}}"  data-src="{{idlesDetail.logo}}" bindtap="previewImage" lazy-load></image>
 </view>
 
-<!-- 描述 -->
+<!-- 描述 --> 
 <view class="card">
   <view class=" margin-left margin-top-lg title font-weight">{{idlesDetail.title}}</view>
   <view class="margin-left margin-top-sm border-bottom">ISBN：{{idlesDetail.isbn}}</view>
@@ -35,4 +35,7 @@
 <view class="center margin-top-xl margin-bottom-xl">
   <view class="cu-btn bg-green shadow round text-center" bindtap="call" data-phone="{{idlesDetail.phone}}">
     <text class="cuIcon-dianhua text-red "></text> 联系购买</view>
+       <button class="cu-btn bg-yellow shadow round text-center margin-left" open-type="share">分享</button> 
 </view>    
+
+<view style="height:20rpx;"></view>

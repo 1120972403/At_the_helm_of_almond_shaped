@@ -9,7 +9,9 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft: 0,
-    flag:''
+    flag:'',
+    CustomBar: app.globalData.CustomBar,
+    imgUrl: require('../../../config.js').imgUrl
   },
   tabSelect(e) {
     this.setData({
@@ -44,7 +46,12 @@ Page({
                 success: function (res) {
                   wx.showToast({
                     title: '下架成功！',
+                    icon: 'success',
+                    duration: 1500
                   })
+                  setTimeout(function () {
+                    that.onShow();
+                  }, 1500)
 
                 }
               })
@@ -77,7 +84,12 @@ Page({
                 success: function (res) {
                   wx.showToast({
                     title: '上架成功！',
+                    icon: 'success',
+                    duration: 1500
                   })
+                  setTimeout(function () {
+                    that.onShow();
+                  }, 1500)
                 }
               })
 
@@ -111,8 +123,12 @@ Page({
                 success: function (res) {
                   wx.showToast({
                     title: '下架成功！',
+                    icon: 'success',
+                    duration: 1500
                   })
-
+                  setTimeout(function () {
+                    that.onShow();
+                  }, 1500)
                 }
               })
 
@@ -144,7 +160,12 @@ Page({
                 success: function (res) {
                   wx.showToast({
                     title: '上架成功！',
+                    icon: 'success',
+                    duration: 1500
                   })
+                  setTimeout(function () {
+                    that.onShow();
+                  }, 1500)
                 }
               })
 
@@ -159,7 +180,44 @@ Page({
         })
       }
     }
+    else{
+        wx.showModal({
+          title: '提示',
+          content: '确定要删除成功？',
+          success: function (res) {
+            if (res.confirm) {
+              wx.request({
+                url: apiUrl + 'article/delArticle',
+                header: {
+                  token: wx.getStorageSync('token')
+                },
+                method: "post",
+                data: {
+                  id,
+                },
+                success: function (res) {
+                  wx.showToast({
+                    title: '删除成功！',
+                    icon: 'success',
+                    duration: 1500
+                  })
+                  setTimeout(function () {
+                    that.onShow();
+                  }, 1500)
+                }
+              })
 
+            } else if (res.cancel) {
+              wx.showToast({
+                title: '点击取消了',
+              })
+              return false;
+            }
+
+          }
+        })
+
+    }
   },
    /**
    * 生命周期函数--监听页面加载
@@ -194,7 +252,19 @@ Page({
         })
       }
     })
-
+    wx.request({
+      url: apiUrl + 'article/myArticle',
+      method: 'get',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      success: (res) => {
+        console.log(res.data.data.myArticle)
+        that.setData({
+          articleList: res.data.data.myArticle
+        })
+      }
+    })
   },
 
   /**
@@ -208,7 +278,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**

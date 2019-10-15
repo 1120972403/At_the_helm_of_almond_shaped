@@ -16,4 +16,11 @@
     <view class="text-bold text-center text-content padding-top-xl text-xl">NCER查分</view>
     <view class="text-center text-content padding-bottom ">计算机等级考试查分</view>
   </view>
-</navigator>
+</navigator> 
+
+
+
+
+<view class="cu-btn line-blue shadow bottom">
+更多考试介绍
+</view>

@@ -1,11 +1,9 @@
 /* pages/box/other/plant/plant.wxss */
-
-.camera {
+.page{
   width: 100%;
-  height: 800rpx;
+  height: 100%;
 }
-
-.camera1 {
+.camera {
   width: 100%;
   height: 800rpx;
 }
@@ -106,8 +104,13 @@
   padding: 20px 10px;
   width: 33.33333333%;
   box-sizing: border-box;
-}
 
+
+}
+.flexx{
+  justify-content: center;
+  display: flex;
+}
 .weui-grid__icon {
   display: block;
   width: 28px;

@@ -3,6 +3,7 @@ const apiUrl = require('../../../config.js').apiUrl
 Component({
   options: {
     addGlobalClass: true,
+    
   },
   data: {
     newsList: [
@@ -16,10 +17,38 @@ Component({
     afterTomor: {},
     todyIcon: '../../../images/weather/999.png',
     tomorrowIcon: '../../../images/weather/999.png',
-    afterTomorIcon: '../../../images/weather/999.png'
+    afterTomorIcon: '../../../images/weather/999.png',
+    isTiptrue: true,
+    CustomBar: app.globalData.CustomBar, 
+
   },
   attached() {
     var that = this;
+    // var isFir = wx.getStorageSync('isFirst');
+    // if (isFir == undefined || isFir == '') {
+    //   //如果检测到还没登录需要登录再进入
+    //   wx.reLaunch({
+    //     url: '/pages/welcome/welcome',
+    //   })
+    // }
+    let firstOpen = wx.getStorageSync("loadOpen")
+    console.log("是否首次打开本页面==", firstOpen)
+    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
+      that.setData({
+        isTiptrue: true,
+      })
+    } else {
+      that.setData({
+        isTiptrue: false,
+       
+      })
+    }
+    // if (!firstOpen){
+    //   that.setData({
+    //     modalName: 'news',
+
+    //   })
+    //}
     // 天气数据获取
     wx.getLocation({
       type: 'wgs84',
@@ -52,14 +81,31 @@ Component({
       url: apiUrl +'look/newList',
       method:'get',
       success:function(res){
+        console.log( res.data.data)
         that.setData({
-          newsList: res.data.data
+          newsList: res.data.data,
+          news: res.data.data[0]
         })
       }
     })
     
   },
   methods: {
+    hideModal(e) {
+      this.setData({
+        modalName: null
+      })
+    },
+    
+    closeThis(e) {
+      wx.setStorage({
+        key: 'loadOpen',
+        data: 'OpenTwo'
+      })
+      this.setData({
+        isTiptrue: false
+      })
+    },
 
   },
 

@@ -1,11 +1,11 @@
 //小程序配置文件
 
 // var apiUrl = "http://wx.jingyiban.cn/index.php/api/"
-var apiUrl ="http://admin.cn/index.php/api/"
-var url = "http://admin.cn/"
+var apiUrl ="https://zzxl.zlzyy.club/index.php/api/"
+var imgUrl = "https://zzxl.zlzyy.club/"
 var config = {
   apiUrl,
-  url
+  imgUrl
 };
 
 

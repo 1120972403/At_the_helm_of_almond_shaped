@@ -12,7 +12,28 @@ Page({
     lostfoundList: [],
     isLoad: true,
     //选择的tabSelect的id
-    tabId:0
+    tabId:0,
+    CustomBar: app.globalData.CustomBar,
+  },
+  //搜索信息
+  valuechange: function (res) {
+    this.setData({
+      tmp: res.detail.value
+    })
+
+  },
+  search: function () {
+    wx.showToast({
+      title: '搜索ing',
+      icon: 'loading',
+      duration: 1000
+    })
+    this.setData({
+      page: 1,
+      isLoad: true
+    })
+    var keyword = this.data.tmp
+    this._getList('all',1, keyword);
   },
   /** 浮动小球添加信息 **/
   add: function() {
@@ -21,14 +42,15 @@ Page({
       url: './addlost/addlost',
     })
   },
-  _getList(type,page){
+  _getList(type, page, keyword=""){
     var that = this
     wx.request({
       url: apiUrl + 'lost_found/lostfoundList',
       method: 'post',
       data:{
         type,
-        page
+        page,
+        keyword,
       },
       success: function (res) {
         // 检查是否还有下一页数据，若没有则提示并中断
@@ -71,17 +93,14 @@ Page({
     })
     if (tabId == 0) {
         //查询全部
-      var type = "all"
-      this._getList(type,1);
+      this._getList('all',1,"");
     }
     else if (tabId == 1) {
       //查询报失的列表
-      var type = 'lost'
-      this._getList(type,1);
+      this._getList('lost', 1, "");
     } else {
       //查询招领列表
-      var type = 'found'
-      this._getList(type,1);
+      this._getList('found', 1, "");
     }
   },
   /**
@@ -93,11 +112,10 @@ Page({
       that.setData({
         modalName: "goauth",
         flag:"****"
-
+ 
       })
     }
-    var type= "all";
-    this._getList(type);
+    this._getList('all', 1, "");
   },
 
   /**
@@ -111,7 +129,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this._getList('all', 1, "");
   },
 
   /**
@@ -141,17 +159,14 @@ Page({
     })
     if (tabId == 0) {
       //查询全部
-      var type = "all"
-      this._getList(type, 1);
+      this._getList('all', 1, "");
     }
     else if (tabId == 1) {
       //查询报失的列表
-      var type = 'lost'
-      this._getList(type, 1);
+      this._getList('lost', 1, "");
     } else {
       //查询招领列表
-      var type = 'found'
-      this._getList(type, 1);
+      this._getList('found', 1, "");
     }
     // this.setData({
     //   page: 1,
@@ -174,16 +189,16 @@ Page({
     if (tabId == 0) {
       //查询全部
       var type = "all"
-      this._getList(type, this.data.page);
+      this._getList(type, this.data.page,'');
     }
     else if (tabId == 1) {
       //查询报失的列表
       var type = 'lost'
-      this._getList(type, this.data.page);
+      this._getList(type, this.data.page,'');
     } else {
       //查询招领列表
       var type = 'found'
-      this._getList(type, this.data.page);
+      this._getList(type, this.data.page,'');
     }
 
   },

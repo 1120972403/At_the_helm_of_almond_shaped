@@ -5,8 +5,8 @@
 </cu-custom>
 
 <form bindsubmit="formSubmit" bindreset="formReset">
-  <view class="card">
-    <view class="cu-form-group1 margin-top-xs">
+  <view class="card"  style="margin-top:300rpx;">
+    <view class="cu-form-group margin-top-xs">
       <view class="title">考试时间</view>
       <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
         <view class="picker">
@@ -15,7 +15,7 @@
       </picker>
     </view>
 
-    <view class="cu-form-group1 margin-top-xs">
+    <view class="cu-form-group margin-top-xs">
       <view class="title">考试科目</view>
       <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
         <view class="picker">
@@ -24,21 +24,21 @@
       </picker>
     </view>
 
-    <view class="cu-form-group1 margin-top-xs">
+    <view class="cu-form-group margin-top-xs">
       <view class="title">证件号码</view>
       <input type="text" name="sfzh" placeholder="输入证件号码"></input>
     </view>
 
-    <view class="cu-form-group1 margin-top-xs">
+    <view class="cu-form-group margin-top-xs">
       <view class="title">姓名</view>
       <input type="text" name="name" placeholder="输入姓名"></input>
     </view>
 
-    <view class="cu-form-group1 margin-top-xs">
+    <view class="cu-form-group margin-top-xs">
       <view class="title">验证码：</view>
       <input placeholder="输入右侧中的验证码" name="verify"></input>
       <!-- //先请求验证码再显示验证码 -->
-      <image src="{{img}}"></image>
+      <image src="{{img?img:'/images/code.jpg'}}"></image>
     </view>
   </view>
 

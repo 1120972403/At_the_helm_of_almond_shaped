@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/home/home",
     "pages/welcome/welcome",
     "pages/look/home/home",
@@ -39,7 +40,9 @@
     "pages/box/swiperlist/swiperlist",
     "pages/box/other/plant/flower/flower",
     "pages/box/other/plant/history/history",
-    "pages/box/other/plant/history/detail/detail"
+    "pages/box/other/plant/history/detail/detail",
+    "pages/box/study/library/library",
+    "pages/box/study/library/retrieve/retrieve"
   ],
   "permission": {
     "scope.userLocation": {
@@ -49,8 +52,15 @@
   "window": {
     "navigationStyle": "custom"
   },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx7c934c1fcbc0006c"
+  ],
   "sitemapLocation": "sitemap.json"
 }

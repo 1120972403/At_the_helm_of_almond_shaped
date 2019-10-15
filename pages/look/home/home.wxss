@@ -8,6 +8,9 @@
   flex-wrap: nowrap;
 }
 
+
+
+
 .img {
   width: 400rpx;
   height: 300rpx;

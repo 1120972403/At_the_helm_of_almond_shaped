@@ -1,7 +1,7 @@
 // pages/box/other/plant/history/history.js
 const app = getApp()
 const apiUrl = require('../../../../../config.js').apiUrl
-const url = require('../../../../../config.js').url
+const imgUrl = require('../../../../../config.js').imgUrl
 Page({
 
   /**
@@ -27,7 +27,7 @@ Page({
         console.log(res.data.data)
         var data = res.data.data
         data.forEach(function (value, index, list) {
-          list[index].imgUrl = list[index].imgUrl.replace(/..\/public\//gi, url); 
+          list[index].imgUrl = list[index].imgUrl.replace(/..\/public\//gi, imgUrl); 
         });
         console.log(data)
         that.setData({

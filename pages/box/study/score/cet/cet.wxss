@@ -1,16 +1,15 @@
 /* pages/box/study/score/cet/cet.wxss */
-.cu-form-group1 {
-	padding: 1rpx 30rpx;
-	display: flex;
-	align-items: center;
-	min-height: 100rpx;
-	justify-content: space-between;
-  	border-top: 1rpx solid #eee;
-}
+
 .margin-top{
   border-radius: 10px
 }
 image{
   width: 140rpx;
   height: 60rpx;
+}
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.flex{
+  flex-direction: column;
 }

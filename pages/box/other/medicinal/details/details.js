@@ -1,5 +1,5 @@
 // pages/box/other/medicinal/details/details.js
-// pages/index/tupu/xianxi/xianxi.js
+const apiUrl = require('../../../../../config.js').apiUrl
 Page({
 
   /**
@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://admin.cn/index.php/api/medicinal/details',
+      url: apiUrl+'/medicinal/details',
       method:'post',
       data: {
         id: options.id

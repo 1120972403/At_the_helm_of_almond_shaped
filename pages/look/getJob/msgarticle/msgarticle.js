@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    hidden: false
   },
 
   /**
@@ -28,6 +28,11 @@ Page({
           date:res.article_date,
           html: html
         })
+        setTimeout(() => {
+          that.setData({
+            hidden: true
+          })
+        }, 300)
       }
     })
   },

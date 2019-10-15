@@ -1,0 +1,11 @@
+<!--pages/box/study/library/retrieve/retrieve.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">馆藏检索</view>
+</cu-custom>
+
+
+<input placeholder="输入书名" class="input item center"></input>
+
+<view class="margin-top-lg margin-bottom-lg top">
+  <view class="cuIcon-roundright lg text-blue center"></view>
+</view>

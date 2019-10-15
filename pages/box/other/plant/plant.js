@@ -10,6 +10,8 @@ Page({
     testPicFile: '',
     userInfo: [],
     result: [],
+    Width: app.globalData.Width,
+    Height: app.globalData.Height,
   },
   hideModal(e) {
     this.setData({

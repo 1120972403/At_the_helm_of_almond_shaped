@@ -1,6 +1,7 @@
 // pages/box/other/plant/flower/flower.js
-Page({
+const imgUrl = require('../../../../../config.js').imgUrl
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -17,7 +18,7 @@ Page({
   },
   back(){
     wx.navigateTo({
-      url: '../plant/plant',
+      url: '/pages/box/other/plant/plant',
     })
   },
   /**
@@ -28,7 +29,7 @@ Page({
     var xx = JSON.parse(options.result)
     // var xx = JSON.parse(result);
 
-    var img = xx.data.img.replace(/..\/public/gi, 'http://admin.cn')
+    var img = xx.data.img.replace(/..\/public/gi, imgUrl)
     console.log(img)
     that.setData({
       list: xx.data.list.result,

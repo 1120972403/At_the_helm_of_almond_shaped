@@ -80,3 +80,6 @@
     <button class="cu-btn bg-grey shadow round text-center margin-left" formType="reset">重置</button>
   </view>
 </form>
+
+
+<view style="height:20rpx;"></view>

@@ -1,8 +1,8 @@
-<cu-custom bgColor="bg-gradual-blue" >
+<cu-custom bgColor="bg-gradual-blue"  isCustom="{{false}}">
   <view slot="content">新鲜事</view>
 </cu-custom>
 
-  <!-- 快捷按钮 -->
+  <!-- 快捷按钮 --> 
   <view class='btn-flex'>
     <button class="cu-btn round  bg-white">全部</button>
     <button class="cu-btn round  bg-white">校园资讯</button>
@@ -11,16 +11,16 @@
       <text>时间</text>
     <text class="cuIcon-order lg text-gray large"></text>
     </text>
-  </view>
+  </view> 
   <!-- 信息显示 -->
     <block wx:for="{{articleList}}" wx:key="*this">
     <view class="cu-card dynamic">
-      <view class="cu-item shadow">
+      <view class="cu-item shadow animation-slide-left">
         <view class="cu-list menu-avatar">
           <view class="cu-item">
             <view class="cu-avatar round lg border" style="background-image:url('{{item.avatarUrl}}');"></view>
             <view class="content flex-sub">
-              <view >{{item.stu_name}}
+              <view >{{item.nickName}}
                 <text class='sign-red' wx:if="{{item.is_vip!=0 && item.auth!=0}}">官方</text>
                  <text class='sign' wx:elif="{{item.auth!=0}}">已认证</text>
               </view>
@@ -38,7 +38,7 @@
             {{item.content}}
           </view>
           <view class="grid flex-sub padding-lr col-3 grid-square">
-            <view class="bg-img isCard " style="background-image:url('{{imgs}}');" wx:if='{{item.imgs !=""}}' wx:for="{{item.imgs}}" wx:key="imgs" wx:for-item="imgs" >
+            <view class="bg-img isCard  animation-slide-left" style="background-image:url('{{imgUrl}}{{imgs}}');" wx:if='{{item.imgs !=""}}' wx:for="{{item.imgs}}" wx:key="imgs" wx:for-item="imgs"  >
             </view>
           </view>
         </navigator>

@@ -8,7 +8,7 @@
       <text>{{detail.name}}</text>
     </view>
     <view class="center">
-      <view class="cu-btn bg-yellow round" openType="share">立即分享</view>
+      <button class="cu-btn bg-yellow round" openType="share">立即分享</button>
     </view>
   </view>
   <view>

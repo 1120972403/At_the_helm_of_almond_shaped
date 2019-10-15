@@ -1,4 +1,14 @@
 /* pages/box/study/score/score.wxss */
-page{
+
+page {
   background-color: white;
+}
+
+.bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 50rpx;
+  margin: auto;
+  width: 40%;
 }

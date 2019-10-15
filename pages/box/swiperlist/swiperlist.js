@@ -1,4 +1,5 @@
 // pages/box/swiperlist/swiperlist.js
+const apiUrl = require('../../../config.js').apiUrl
 Page({
 
   /**
@@ -12,7 +13,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
+    wx.request({
+      url: apiUrl + 'box_news/newslist?id=' + options.id,
+      method: "get",
+      success:(res)=> {
+        console.log(res.data)
+        var html = res.data.data.content.replace(/<img/gi, '<img style="max-width:100%;height:auto;float:left;display:block" ')
+        this.setData({
+          html: html,
+          title: res.data.data.title,
+          date: res.data.data.create_time
+        })
 
+      }
+    })
   },
 
   /**

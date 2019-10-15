@@ -3,24 +3,27 @@ Component({
     addGlobalClass: true,
   },
   data: {
-    userInfo:'',
-    stu_info:[]
+    userInfo: '',
+    stu_info: []
   },
   attached() {
-    var that = this 
+    var that = this
     that.setData({
       userInfo: wx.getStorageSync('isFirst'),
-      stu_info:wx.getStorageSync('stu_info')
+      stu_info: wx.getStorageSync('stu_info')
     })
-   
-   
+
+
   },
+
   methods: {
-    navgo(){
+
+    navgo() {
       wx.navigateTo({
         url: '/pages/mine/auth/auth',
 
       })
-    }
+    },
+    //转发
   }
 })

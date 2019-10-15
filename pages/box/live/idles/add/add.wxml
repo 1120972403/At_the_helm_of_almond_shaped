@@ -19,14 +19,9 @@
   </view>
   <view class=" margin border-bottom line-height">书本描述：{{bookInfo.description}}</view>
 </view>
-
-
-
-
 <!-- 作者描述 -->
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="card"> 
-
     <view class="cu-form-group">
       <view class="title ">折扣</view>
       <input value="{{new_price}}元" placeholder="0元" class="text-red" name="new_price" disabled="disabled"></input>
@@ -50,11 +45,19 @@
         <view class="margin-left center">邮寄</view>
       </radio-group>
     </view>
-    <view class="cu-form-group">
-      <view class="title">电话</view>
-      <input placeholder="请输入联系电话" name="phone"></input>
+        <view class="cu-form-group">
+      <view class="title">联系方式</view>
+      <input placeholder="请输入联系方式..." name="phone" type="number" maxlength="11"></input>
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-blue">
+          +86
+        </view>
+        <view class="cu-tag line-blue">
+          中国大陆
+        </view>
+      </view>
     </view>
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">QQ</view>
       <input placeholder="请输入QQ" name="qq"></input>
     </view>
@@ -62,7 +65,7 @@
       <view class="title">微信</view>
       <button class="cu-btn round bg-green shadow">
         <text class="cuIcon-weixin"></text> 加入微信</button>
-    </view>
+    </view> -->
   </view>
   <view class="center margin-top-xl margin-bottom-xl">
     <button class="cu-btn bg-green shadow round text-center" formType="submit">立即发布</button>
@@ -70,6 +73,7 @@
   </view>
 </form>
 
+<view style="height:20rpx;"></view>
 
 <loading hidden="{{hidden}}">
   加载中...
@@ -77,19 +81,16 @@
 
 
 <!-- 扫码失败时要显示的内容 -->
-<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
-  <view class="cu-dialog">
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}" >
+  <view class="cu-dialog" bindtap="back">
     <view class="cu-bar bg-white justify-end">
       <view class="content">提示</view>
-      <!-- <view class="action" bindtap="hideModal">
-        <text class="cuIcon-close text-red"></text>
-      </view> -->
     </view>
     <view class="padding-xl">
       暂未收集到该书相关信息，相应书籍信息正在添加中。。。。
     </view>
     <view class="cu-bar bg-white">
-      <view class="action margin-0 flex-sub text-green solid-left" bindtap="back">我知道了！</view>
+      <view class="action margin-0 flex-sub text-green solid-left" >我知道了！</view>
     </view>
   </view>
 </view>

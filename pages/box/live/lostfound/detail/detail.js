@@ -1,6 +1,7 @@
 // pages/box/live/lostfound/detail/detail.js
 const app = getApp()
 const apiUrl = require('../../../../../config.js').apiUrl
+
 Page({
 
   /**
@@ -10,12 +11,23 @@ Page({
     cardCur: 0,
     lostfoundDetail:[],
     swiperList: [],
+    imgUrl : require('../../../../../config.js').imgUrl,
+    id:0
   },
   //打电话
   call(e) {
     // console.log(e.currentTarget.dataset.phone);
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phone
+    })
+  },
+  //查看大图
+  previewImage: function (e) {
+    console.log(e)
+    var src = this.data.mgUrl+e.target.dataset.src;
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接  
+      urls: [src] // 需要预览的图片http链接列表  
     })
   },
   /**
@@ -33,9 +45,6 @@ Page({
       },
       method: 'get',
       success: function (res) {
-        console.log("照片", res.data.data.imgs)
-        console.log('详细', res.data.data.lostfoundDetail)
-        // var imgs = res.data.data.imgs.replace(/..\/public/gi, 'http://wx.jingyiban.cn')
         that.setData({
           lostfoundDetail: res.data.data.lostfoundDetail,
           imgs: res.data.data.imgs
@@ -90,7 +99,22 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (res) {
+    return {
+      title: '“执掌杏林”--失物招领,这里应有你的失物',
+      path: '/pages/welcome/welcome',
+   
+      success: function (shareTickets) {
+        console.info(shareTickets + '成功');
+        // 转发成功
+      },
+      fail: function (res) {
+        console.log(res + '失败');
+        // 转发失败 
+      },
+      complete: function (res) {
+        // 不管成功失败都会执行
+      }
+    }
   }
 })

@@ -8,19 +8,11 @@ App({
     }) // 如果是 tabbar 页面，请使用 wx.switchTab
   },
   onLaunch: function () {
-    var isFir = wx.getStorageSync('isFirst');
-    // if(isFir){
-    //   wx.navigateTo({
-    //     url: '/pages/home/home',
-    //   })
-    // }
-    // else{
-    //   wx.navigateTo({
-    //     url: '/pages/welcome/welcome',
-    //   })
-    // }
+
     wx.getSystemInfo({
       success: e => {
+        this.globalData.Width = e.windowWidth;
+        this.globalData.Height = e.windowHeight;
         this.globalData.StatusBar = e.statusBarHeight;
         let custom = wx.getMenuButtonBoundingClientRect();
         this.globalData.Custom = custom;
@@ -36,7 +28,6 @@ App({
               success: res => {
                 // 可以将 res 发送给后台解码出 unionId
                 this.globalData.userInfo = res.userInfo
-
                 // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                 // 所以此处加入 callback 以防止这种情况
                 if (this.userInfoReadyCallback) {

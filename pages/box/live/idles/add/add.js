@@ -25,7 +25,7 @@ Page({
     let new_price = (price * discount) / 10
     this.setData({
       discount: discount,
-      new_price: new_price
+      new_price: new_price.toFixed(2)
     })
   },
 
@@ -54,9 +54,9 @@ Page({
         mask: true,
         duration: 1000
       })
-    } else if (info.phone.length == 0 || info.qq.length == 0) {
+    } else if (info.phone.length == 0 || info.phone.length!=11) {
       wx.showToast({
-        title: '输入电话或者QQ!',
+        title: '输入正确电话!',
         icon: 'loading',
         mask: true,
         duration: 1000
@@ -97,7 +97,9 @@ Page({
               icon: 'success',
               duration: 1500
             })
-            wx.navigateBack();
+            setTimeout(function () {
+              wx.navigateBack();
+            }, 1500)
           }
           else {
             wx.showToast({

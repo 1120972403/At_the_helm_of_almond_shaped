@@ -12,3 +12,7 @@
     <rich-text nodes="{{html}}"></rich-text>
   </view>
 </view>
+
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>

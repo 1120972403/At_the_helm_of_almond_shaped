@@ -1,1 +1,4 @@
 /* pages/box/swiperlist/swiperlist.wxss */
+page{
+  background-color: white !important;
+}

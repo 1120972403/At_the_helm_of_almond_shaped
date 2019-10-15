@@ -6,15 +6,16 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  data: { 
     page: 1,
     TabCur: 0,
-    scrollLeft: 0,   
-    idlesList: [], 
+    scrollLeft: 0,
+    idlesList: [],
     isLoad: true,
-    tmp:''
+    tmp: '',
+    CustomBar: app.globalData.CustomBar,
   },
-//搜索信息
+  //搜索信息
   valuechange: function (res) {
     this.setData({
       tmp: res.detail.value
@@ -22,6 +23,11 @@ Page({
 
   },
   search: function () {
+    wx.showToast({
+      title: '搜索ing',
+      icon: 'loading',
+      duration: 1000
+    })
     this.setData({
       page: 1,
       isLoad: true
@@ -30,7 +36,7 @@ Page({
     this._getList(1, keyword);
   },
   /** 浮动小球添加信息 **/
-  add: function() {
+  add: function () {
     var that = this;
     wx.scanCode({
       // 只允许从相机扫码
@@ -43,7 +49,7 @@ Page({
           url: './add/add?isbn=' + res.result,
         })
       },
-      fail: function() { 
+      fail: function () {
         // 显示弹出 与hideModal对应
         that.setData({
           modalName: "DialogModal"
@@ -75,12 +81,12 @@ Page({
         page,
         keyword
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res.data.data)
         //检查是否还有下一页数据，若没有则提示并中断
         if (res.data.data.idlesList.length == 0) {
           that.setData({
-            over:'over'
+            over: 'over'
           })
         }
         //  concat合并数组  第一次进入不需要累加
@@ -109,7 +115,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this
     if (!wx.getStorageSync('stu_info')) {
       that.setData({
@@ -117,61 +123,61 @@ Page({
       })
     }
     var page = 1;
-    this._getList(page,"");
+    this._getList(page, "");
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
-    // this.onLoad();
+    this.onLoad();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     //将page置1,再次刷新执行第一次操作    
     this.setData({
       page: 1,
       isLoad: true
     })
-    this._getList(1,"");
+    this._getList(1, "");
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     console.log('上拉此时page', this.data.page)
     this.setData({
       page: this.data.page + 1,
       isLoad: true
     })
-    this._getList(this.data.page,"");
+    this._getList(this.data.page, "");
 
 
   },
@@ -179,7 +185,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

@@ -8,76 +8,119 @@
 </cu-custom>
 
 <!-- 导航 -->
-<scroll-view scroll-x class="bg-green nav ">
-  <view class="cu-item {{0==TabCur?'text-white cur':''}} " bindtap="tabSelect" data-id="0">
+<scroll-view scroll-x class="bg-green nav " style="position: fixed;top:{{CustomBar}}px;z-index:100;">
+  <view class="cu-item" bindtap="tabSelect" data-id="0">
     <text class="cuIcon-apps"></text> 失物招领
+    <view class="{{0==TabCur?'line':''}} "></view>
   </view>
-  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+  <view class="cu-item" bindtap="tabSelect" data-id="1">
     <text class="cuIcon-upstagefill"></text> 闲置图书
+    <view class="{{1==TabCur?'line':''}} "></view>
   </view>
-  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+  <view class="cu-item" bindtap="tabSelect" data-id="2">
     <text class="cuIcon-clothesfill"></text> 我的新鲜事
+    <view class="{{2==TabCur?'line':''}} "></view>
   </view>
 </scroll-view>
 
-<view hidden="{{TabCur != 0}}" class="image">
+<view style="margin-top:100rpx;">
+  <view hidden="{{TabCur != 0}}" class="image">
 
-  <block wx:for="{{mylostfound}}" wx:key="*this">
-    <navigator open-type="navigate" hover-class='none' url="./detail/detail?id={{item.id}}" class="card1" bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="mylostfound">
-      <view class="title">{{item.title}}</view>
-      <view class="cu-tag bg-blue bq1" wx:if='{{item.type == "lost" }}'>报失</view>
-      <view class="cu-tag bg-orange bq1" wx:else>招领</view>
-      <view class="content">
-        <view>
-          <text class="cuIcon-friendfavor lg text-black margin-left"></text>
-          <text class="margin-left-xs">{{item.stu_name}}</text>
-        </view>
-        <view>
-          <text class="cuIcon-calendar lg text-black margin-left"></text>
-          <text class="margin-left-xs">{{item.create_time}}</text>          
-            <text wx:if="{{item.delete_time==0}}" class="margin-left-xl bg-green  border">进行中</text>
-             <text wx:else class="margin-left-xl bg-grey  border">已下架</text>
-        </view>
-      </view>
-    </navigator>
-  </block>
-    <view class="text-center">失物招领被领与找到或其他原因，可以长按上下架</view>
-</view>
-
-
-
-<view hidden="{{TabCur != 1}}" class="image">
-  <!-- bindlongpress="deleteImage" data-index="{{index}}" -->
-  <block wx:for="{{myidles}}" wx:key="*this">
-    <navigator open-type="navigate" hover-class='none' url="/pages/box/live/idles/detail/detail?id={{item.id}}" class="card"  bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="myidles">
-      <view class="flex  p-xs margin-bottom-sm mb-sm">
-        <!-- 图片 -->
-        <image class="flex-sub  padding-sm margin-left-xs radius img" src="{{item.logo}}"></image>
-
-        <!-- 描述 -->
-        <view class="flex-twice radius">
-          <view class=" margin-top-lg title">{{item.title}}</view>
-          <view class="margin-top-sm border-bottom">{{item.author_name}}·{{item.publisher}}·{{item.published}}</view>
-          <view class="flex margin-top">
-            <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
-            <text class="center margin-left-sm red">￥{{item.new_price}}</text>
-            <text class="center margin-left-sm red ">{{item.discount}}折</text>
-
-            <text wx:if="{{item.delete_time==0}}" class="center margin-left-sm bg-green  border">进行中</text>
-             <text wx:else class="center margin-left-sm bg-grey  border">已下架</text>
+    <block wx:for="{{mylostfound}}" wx:key="*this">
+      <navigator open-type="navigate" hover-class='none' url="/pages/box/live/lostfound/detail/detail?id={{item.id}}" class="card1" bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="mylostfound">
+        <view class="title">{{item.title}}</view>
+        <view class="cu-tag bg-blue bq1" wx:if='{{item.type == "lost" }}'>报失</view>
+        <view class="cu-tag bg-orange bq1" wx:else>招领</view>
+        <view class="content">
+          <view>
+            <text class="cuIcon-friendfavor lg text-black margin-left"></text>
+            <text class="margin-left-xs">{{item.stu_name}}</text>
           </view>
-          <view class="margin-top-sm">发布时间：{{item.create_time}}</view>
+          <view>
+            <text class="cuIcon-calendar lg text-black margin-left"></text>
+            <text class="margin-left-xs">{{item.create_time}}</text>
+            <text wx:if="{{item.delete_time==0}}" class="margin-left-xl bg-green  border">进行中</text>
+            <text wx:else class="margin-left-xl bg-grey  border">已下架</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class="text-center">失物招领被领与找到或其他原因，可以长按上下架</view>
+  </view>
+
+
+
+  <view hidden="{{TabCur != 1}}" class="image">
+    <!-- bindlongpress="deleteImage" data-index="{{index}}" -->
+    <block wx:for="{{myidles}}" wx:key="*this">
+      <navigator open-type="navigate" hover-class='none' url="/pages/box/live/idles/detail/detail?id={{item.id}}" class="card" bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="myidles">
+        <view class="flex  p-xs margin-bottom-sm mb-sm">
+          <!-- 图片 -->
+          <image class="flex-sub  padding-sm margin-left-xs radius img" src="{{item.logo}}" lazy-load></image>
+
+          <!-- 描述 -->
+          <view class="flex-twice radius">
+            <view class=" margin-top-lg title">{{item.title}}</view>
+            <view class="margin-top-sm border-bottom">{{item.author_name}}·{{item.publisher}}·{{item.published}}</view>
+            <view class="flex margin-top">
+              <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+              <text class="center margin-left-sm red ">￥{{item.new_price}}</text>
+              <text class="center margin-left-sm red ">{{item.discount}}折</text>
+
+              <text wx:if="{{item.delete_time==0}}" class="center margin-left-sm bg-green  border">进行中</text>
+              <text wx:else class="center margin-left-sm bg-grey  border">已下架</text>
+            </view>
+            <view class="margin-top-sm">发布时间：{{item.create_time}}</view>
+          </view>
+        </view>
+      </navigator>
+
+
+    </block>
+    <view class="text-center">书籍卖出或其他原因，可以长按上下架</view>
+  </view>
+
+
+
+  <view hidden="{{TabCur != 2}}" class="image">
+
+
+    <!-- 信息显示 -->
+    <block wx:for="{{articleList}}" wx:key="*this">
+      <view class="cu-card dynamic" bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="articleList">
+        <view class="cu-item shadow">
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <view class="cu-avatar round lg border-bg" style="background-image:url('{{item.avatarUrl}}');"></view>
+              <view class="content flex-sub">
+                <view>{{item.nickName}}
+                  <text class='sign bg-red' wx:if="{{item.is_ok==0}}">待审核</text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.create_time}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <navigator url='/pages/new/comment/comment?id={{item.id}}' open-type="navigate" hover-class='none'>
+            <view class="text-content" style="font-size:14px;" wx:if="{{flag}}">
+              {{flag}}
+            </view>
+            <view class="text-content" wx:else>
+              {{item.content}}
+            </view>
+            <view class="grid flex-sub padding-lr col-3 grid-square">
+              <view class="bg-img isCard " style="background-image:url('{{imgUrl}}{{imgs}}');" wx:if='{{item.imgs !=""}}' wx:for="{{item.imgs}}" wx:key="imgs" wx:for-item="imgs">
+              </view>
+            </view>
+          </navigator>
+          <view class="text-gray text-sm text-right padding margin-top ">
+            <text class="cuIcon-appreciatefill margin-lr-xs lg"></text> 20
+            <text class="cuIcon-messagefill margin-lr-xs lg"></text> 30
+          </view>
         </view>
       </view>
-    </navigator>
+    </block>
 
-
-  </block>
-  <view class="text-center">书籍卖出或其他原因，可以长按上下架</view>
-</view>
-
-
-
-<view hidden="{{TabCur != 2}}" class="image">
-  这是xxxx
+  </view>
 </view>

@@ -2,41 +2,41 @@
 <cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
   <view slot="content">植物识别</view>
 </cu-custom>
-
-<view wx:if="{{ !testPicFile }}" class='page'>
-  <camera mode="normal"  device-position="back" flash="auto" binderror="error" class='camera'>
-    <view class='cameras'>
-    <cover-view class="kuang"></cover-view>
-  </view>
-  </camera>
-  <!-- <view>
+<view class='page'>
+  <view wx:if="{{ !testPicFile }}">
+    <camera mode="normal" device-position="back" flash="auto" binderror="error" class='camera'>
+      <view class='cameras'>
+        <cover-view class="kuang"></cover-view>
+      </view>
+    </camera>
+    <!-- <view>
 </view> -->
-</view>
-
-<view  wx:else class='page'>
-  <image src='{{ testPicFile }}' class='camera'></image>
-</view>
-<!-- 动画 -->
-<view class='animation' wx:if="{{ testPicFile }}" >
-  <view class='animation-list'>
   </view>
+
+  <view wx:else>
+    <image src='{{ testPicFile }}' class='camera'></image>
+  </view>
+  <!-- 动画 -->
+  <view class='animation' wx:if="{{ testPicFile }}">
+    <view class='animation-list'>
+    </view>
+  </view>
+
 </view>
-
-
 <view class='tar'>
 
   <view class='tar-text'>请将识别主体放于框内</view>
 
   <view class=''>
     <view class="weui-grid" bindtap='selectimg'>
-      <image class="weui-grid__icon " src="/images/plant/photo.png"  />
+      <image class="weui-grid__icon " src="/images/plant/photo.png" />
       <view class="weui-grid__label ">相册</view>
     </view>
-    <view class="weui-grid" bindtap='takePhoto'>
-      <image class=" paishe center " src="/images/plant/takephoto.png"  />
+    <view class="weui-grid flexx" bindtap='takePhoto'>
+      <image class=" paishe center " src="/images/plant/takephoto.png" />
     </view>
-    <view class="weui-grid "bindtap='history'>
-      <image class="weui-grid__icon " src="/images/plant/dongtai01.png"  />
+    <view class="weui-grid " bindtap='history'>
+      <image class="weui-grid__icon " src="/images/plant/dongtai01.png" />
       <view class="weui-grid__label ">识别历史</view>
     </view>
 

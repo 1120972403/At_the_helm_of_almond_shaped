@@ -83,3 +83,40 @@ font-weight:bold;
   padding: 2px;
   color: white;
 }
+
+
+/* 我的新鲜事 */
+.border-bg{
+  border: 1px solid gainsboro;
+}
+.btn-flex {
+  margin: 20rpx;
+}
+
+.cu-btn {
+  margin-right: 20rpx;
+}
+.lg{
+  font-size: 40rpx;
+}
+.large {
+  font-size: 40rpx;
+  margin-left: 5rpx;
+}
+
+.right {
+  float: right;
+  margin-right: 30rpx;
+}
+/* 认证框 */
+.sign{
+  margin: 10rpx;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 22rpx;
+  color: white;
+  padding: 0 5rpx;
+}
+.text-content{
+  margin: 2rpx 30rpx;
+}

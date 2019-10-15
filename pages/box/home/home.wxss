@@ -1,5 +1,21 @@
 /**index.wxss**/
+/* swiper样式重写 */
+.myswiper{
+  padding: 20rpx;
+  
+}
+.card-swiper {
+  height: 250rpx !important;
+}
+.swiper-item{
+  width: 100%;
+  height: 200rpx;
+}
+.swpimg{
+  width: 100%;
+  height: 200rpx;
 
+}
 .box {  
   margin: 20rpx 0; 
 }
@@ -14,6 +30,10 @@ swiper{
 }
 .swiper-item{
   box-shadow: 10rpx 10rpx 40rpx gray;
+  /* background-color: gainsboro; */
+}
+.card-swiper {
+   background-color: #F5F7F9;
 }
 .tab {
   background-color: #f1f1f1;

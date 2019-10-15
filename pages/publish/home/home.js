@@ -1,7 +1,7 @@
 var util = require('../../../utils/util.js');
 const app = getApp()
 const apiUrl = require('../../../config.js').apiUrl
-const url = require('../../../config.js').url
+const imgUrl = require('../../../config.js').imgUrl
 Page({
 
   /**
@@ -11,16 +11,17 @@ Page({
     imgList: '',
     imgUrls: ''
   },
-  formSubmit: function(e) {
-    var that = this
-    console.log(e)
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
 
     var that = this
+    if (!wx.getStorageSync('stu_info')) {
+      that.setData({
+        modalName: "goauth",
+      })
+    }
     // 调用函数时，传入new Date()参数，返回值是日期和时间  
     // 再通过setData更改Page()里面的data，动态更新页面的数据  
     var time = util.formatTime(new Date());
@@ -44,7 +45,7 @@ Page({
     } else {
       //***********提交前将地址传到数据库 ***********
       if (that.data.imgUrls!=''){
-        var imgUrls = that.data.imgUrls.replace(/..\/public\//gi, url)
+        var imgUrls = that.data.imgUrls.replace(/..\/public/gi, '')
       }
       console.log("存储的返回数组", that.data.imgUrls)
       wx.request({
@@ -55,17 +56,19 @@ Page({
         method: "POST",
         data: {
           content: info.content,
-          imgs: imgUrls
+          imgs:imgUrls
         },
         success: function(res) {
           console.log('提交返回', res.data);
           if (res.data.code == 1) {
             wx.showToast({
-              title: '提交成功！！！', //这里打印出登录成功
+              title: '请等待审核', //这里打印出登录成功
               icon: 'success',
               duration: 1500
             })
-            wx.navigateBack();
+            setTimeout(function () {
+             wx.navigateBack();
+            }, 1500)
           } else {
             wx.showToast({
               title: '提交失败！！！',
@@ -110,7 +113,7 @@ Page({
         console.log("imgList", this.data.imgList[0])
 
         //循环把图片上传到服务器
-        for (var i = 0; i < this.data.imgList.length; i++) {
+        for (var i = 0; i < this.data.imgList.length; i++) { 
           wx.uploadFile({
             url: apiUrl + 'article/uploadImg',
             filePath: this.data.imgList[i],

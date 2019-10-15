@@ -1,0 +1,7 @@
+/* pages/box/study/library/library.wxss */
+page{
+  background-color: white;
+}
+.center1{
+ 
+}

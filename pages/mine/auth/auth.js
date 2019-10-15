@@ -1,21 +1,22 @@
 // pages/mine/auth/auth.js
 const app = getApp()
 const apiUrl = require('../../../config.js').apiUrl
+const imgUrl = require('../../../config.js').imgUrl
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
       header: {},
       stuInfo: '',
-      cookies: ''
+      cookies: '',
+      error:""
     },
     //认证成功之后的跳转
     bego(){
       console.log(1)
-      wx.navigateTo({
+      wx.reLaunch({
         url: '/pages/home/home',
       })
     },
@@ -25,9 +26,9 @@ Page({
     wx.request({
       url: apiUrl + 'apiserver/getVerify',
       success: function (res) {
-        console.log(res.data.data)
+        var img = res.data.data.imgUrl.replace(/..\/public\//gi, imgUrl)
         _this.setData({
-          img: res.data.data.imgUrl,
+          img: img,
           cookies: res.data.data.cookies
         })
       }
@@ -42,12 +43,15 @@ Page({
     },
     //再次登录
     again() {
-      // this.onLoad();
+      this.getCode()
       this.setData({
         modalName: null,
       })
     },
     formSubmit: function(e) {
+
+
+      
       var info = e.detail.value
       console.log('value', e.detail.value);
 
@@ -114,70 +118,16 @@ Page({
         })
       }
 },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+   
+  },
 /**
  * 生命周期函数--监听页面加载
  */
 onLoad: function(options) {
-    var _this = this;
-    wx.request({
-      url: apiUrl + 'apiserver/getVerify',
-      success: function(res) {
-        console.log(res.data.data)
-        _this.setData({
-          img: res.data.data.imgUrl,
-          cookies: res.data.data.cookies
-        })
-      }
-    })
-
+  this.getCode();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })

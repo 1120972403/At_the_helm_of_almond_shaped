@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //这里直接在前端渲染添加域名
+    imgUrl: require('../../../config.js').imgUrl
   },
 
   /**

@@ -1,5 +1,7 @@
 // pages/box/other/medicinal/medicinal.js
 const app = getApp()
+const apiUrl = require('../../../../config.js').apiUrl
+
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -8,13 +10,14 @@ Page({
     TabCur: 0,
     MainCur: 0,
     load: true, 
-    typename:'解表药'
+    typename:'解表药',
+    hidden: false
   },
 //获取右侧列表信息
   getList(typeid){
     var that = this
     wx.request({
-      url: 'http://admin.cn/index.php/api/medicinal/typelist',
+      url: apiUrl+'medicinal/typelist',
       method: 'post',
       data:{
         typeid,
@@ -24,6 +27,11 @@ Page({
         that.setData({
           typelist: res.data.data
         })
+        setTimeout(() => {
+          that.setData({
+            hidden: true
+          })
+        }, 1000)
       }
     })
   },
@@ -36,7 +44,7 @@ Page({
 
     //加载左侧的类型列表
     wx.request({
-      url: 'http://admin.cn/index.php/api/medicinal/type',
+      url: apiUrl+'medicinal/type',
       method:'get',
       success:function(res){
         console.log(res.data.data)

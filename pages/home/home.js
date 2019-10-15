@@ -10,15 +10,38 @@ Component({
   },
   attached() {
   },
+
+  
   methods:{
+    tologin(type){
+      if (type != 'look') {
+        var isFir = wx.getStorageSync('isFirst');
+        if (isFir == undefined || isFir == '') {
+          //如果检测到还没登录需要登录再进入
+          wx.reLaunch({
+            url: '/pages/welcome/welcome',
+          })
+          return true;
+        }
+
+      }
+    },
     click(e) {
-      // console.log(e.currentTarget.dataset.name)
+      var type = e.currentTarget.dataset.name;
       let that = this;
-      that.setData({
-        type: e.currentTarget.dataset.name
-      })
+      // 检测是否登录
+      this.tologin(type);
+       that.setData({
+          type: type
+        })
+     
+    
+   
+   
     },
     topublish: function () {
+      
+      this.tologin('');
       wx.navigateTo({
         url: '/pages/publish/home/home',
       })

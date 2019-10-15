@@ -2,11 +2,17 @@
   <image class="mine-bg" src="/images/mine_bg.jpg" style="width:100%;" mode="widthFix"></image>
   <view class="mine-info">
     <view class="left">
-      <image class="head-img" src="{{userInfo.avatarUrl}}"></image>
+      <view class="head-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <!-- <image class="head-img" src="{{userInfo.avatarUrl}}"></image> -->
     </view>
     <view class="right">
       <text wx:if="{{stu_info}}" class="mine-name">{{stu_info[0]}}</text>
-      <text wx:else class="mine-name">{{userInfo.nickName}}</text>
+  
+      <open-data  wx:else type="userNickName" class="mine-name"></open-data>
+
+      <!-- <text wx:else class="mine-name">{{userInfo.nickName}}</text> -->
 
       <text wx:if="{{stu_info}}" class="mine-number">学号:{{stu_info[1]}}</text>
       <text wx:else bindtap="navgo" class="mine-number1">未教务系统认证</text>
@@ -27,9 +33,9 @@
       <view class="text-xxl text-orange">我的发布</view>
     </navigator>
 
-<!-- 如果已经完成认证，不能再进行认证 -->
+    <!-- 如果已经完成认证，不能再进行认证 -->
 
-     <navigator wx:if="{{stu_info}}" url="/pages/mine/myinfo/myinfo" class="flex-sub  padding-sm margin-xs radius border-left">
+    <navigator wx:if="{{stu_info}}" url="/pages/mine/myinfo/myinfo" class="flex-sub  padding-sm margin-xs radius border-left">
       <view class="margin-top-sm ">
         <text class="cuIcon-wefill lg"></text>
       </view>
@@ -64,10 +70,10 @@
   </view>
 
   <view class="cu-item ">
-    <view class="content" bindtap="showQrcode">
+    <button class="cu-btn content" open-type="share">
       <text class="cuIcon-forward text-grey"></text>
-      <text class="text-grey">推荐</text>
-    </view>
+      <text class="text-grey">分享</text>
+    </button>
   </view>
 
   <view class="cu-item arrow">
@@ -84,7 +90,7 @@
     </button>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/mine/about/about" hover-class="none">
       <text class="cuIcon-creativefill text-grey"></text>
       <text class="text-grey">关于</text>
     </navigator>

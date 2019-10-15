@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    idlesDetail: []
+    idlesDetail: [],
   },
   //查看大图
   previewImage: function (e) {
@@ -91,7 +91,22 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function (res) {
+    return {
+      title: '“执掌杏林”--闲置物品,这里应有你的二手物品,快来交易吧！',
+      path: '/pages/welcome/welcome',
 
+      success: function (shareTickets) {
+        console.info(shareTickets + '成功');
+        // 转发成功
+      },
+      fail: function (res) {
+        console.log(res + '失败');
+        // 转发失败
+      },
+      complete: function (res) {
+        // 不管成功失败都会执行
+      }
+    }
   }
 })

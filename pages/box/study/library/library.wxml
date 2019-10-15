@@ -1,0 +1,27 @@
+<!--pages/box/study/library/library.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">图书馆</view>
+</cu-custom>
+
+<view class="center1">
+<!-- <navigator url="">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius bg-cyan">
+    <view class="text-bold text-center text-content padding-top-xl text-xl">座位预约</view>
+    <view class="text-center text-content padding-bottom ">图书馆座位预约</view>
+  </view>
+</navigator> -->
+
+<navigator url="./retrieve/retrieve">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius bg-cyan">
+    <view class="text-bold text-center text-content padding-top-xl text-xl">馆藏检索</view>
+    <view class="text-center text-content padding-bottom ">图书馆图书馆藏检索</view>
+  </view>
+</navigator>
+
+<navigator url="">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius bg-cyan">
+    <view class="text-bold text-center text-content padding-top-xl text-xl">研修室预约</view>
+    <view class="text-center text-content padding-bottom ">图书馆研修室预约</view>
+  </view>
+</navigator>
+</view>

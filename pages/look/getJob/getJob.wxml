@@ -25,3 +25,6 @@
   <!-- //没有更多数据的提示框 -->
 <view class="cu-load  {{over}}"></view>
 
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>

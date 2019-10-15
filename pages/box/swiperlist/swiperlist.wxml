@@ -1,3 +1,16 @@
 <!--pages/box/swiperlist/swiperlist.wxml-->
-<web-view>
-</web-view>
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+  <view slot="content">详细页面</view>
+</cu-custom>
+<view class="article-style">
+  <view class="article-title">{{title}}</view>
+  <view class="article-info">
+    <text>{{date}}</text>
+  </view>
+  <view class="article-content">
+    <rich-text nodes="{{html}}"></rich-text>
+  </view>
+  <view class="margin-top text-grey text-center">
+    @执掌杏林
+  </view>
+</view>

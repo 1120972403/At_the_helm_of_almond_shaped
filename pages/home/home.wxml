@@ -26,6 +26,7 @@
     </view>
     百宝箱
   </view>
+  
   <view bindtap='click' data-name="mine" class="action  {{type=='mine'?'text-green':'text-gray'}}">
     <view class="cuIcon-my">
     </view>

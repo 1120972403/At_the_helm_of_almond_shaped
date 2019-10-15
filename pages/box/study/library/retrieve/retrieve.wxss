@@ -1,0 +1,27 @@
+/* pages/box/study/library/retrieve/retrieve.wxss */
+
+.item {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  bottom: 0;
+}
+.input {
+  text-align: center;
+  background-color: white;
+  border-radius: 50rpx;
+  width: 60%;
+  height: 100rpx;
+}
+.lg {
+  font-size: 80rpx;
+}
+.top{
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 400rpx;
+}

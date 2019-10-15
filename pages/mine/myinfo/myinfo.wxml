@@ -1,6 +1,5 @@
 <!--pages/mine/myinfo/myinfo.wxml-->
 
-
 <view class="mine-top">
   <image class="mine-bg" src="/images/mine_bg.jpg" style="width:100%;" mode="widthFix"></image>
   <view class="mine-info">
@@ -57,7 +56,7 @@
     <view class="content">
       <text class="cuIcon-comment text-grey"></text>
       <text class="text-grey">介绍：</text>
-      <text class="text-grey ">Study hard and make progress every day</text>
+      <text class="text-grey">Study hard and make progress every day</text>
     </view>
   </view>
 </view>
