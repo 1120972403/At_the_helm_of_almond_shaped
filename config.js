@@ -1,8 +1,7 @@
 //小程序配置文件
 
-// var apiUrl = "http://wx.jingyiban.cn/index.php/api/"
-var apiUrl ="https://zzxl.zlzyy.club/index.php/api/"
-var imgUrl = "https://zzxl.zlzyy.club/"
+var apiUrl ="xxxxx"  //这里填你的地址
+var imgUrl = "xxxxx"  //这里填你的地址
 var config = {
   apiUrl,
   imgUrl
