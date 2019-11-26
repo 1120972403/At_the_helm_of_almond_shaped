@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": 28,
 			"list": [
 				{
 					"id": -1,
@@ -237,6 +237,20 @@
 					"id": -1,
 					"name": "检索",
 					"pathName": "pages/box/study/library/retrieve/retrieve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布",
+					"pathName": "pages/publish/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "通知栏",
+					"pathName": "pages/look/hint/hint",
 					"scene": null
 				}
 			]

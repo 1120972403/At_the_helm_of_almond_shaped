@@ -31,7 +31,7 @@ Page({
           img: img,
           cookies: res.data.data.cookies
         })
-      }
+      },
     })
 
   },
@@ -49,12 +49,8 @@ Page({
       })
     },
     formSubmit: function(e) {
-
-
-      
       var info = e.detail.value
       console.log('value', e.detail.value);
-
       if (info.account.length == 0 || info.pwd.length == 0 || info.verify.length == 0) {
         wx.showToast({
           title: '信息输入不完整!',
@@ -114,7 +110,19 @@ Page({
               error: e.data.message
             })
             }
-          }
+          },
+          fail: function (e) {
+            wx.showModal({
+              title: 'bad',
+              content: '教务系统服务器404,请稍后在进行登录',
+            })
+            setTimeout(function () {
+              wx.redirectTo({
+                url: '/pages/home/home',
+              })
+            }, 1000)
+           
+          } 
         })
       }
 },

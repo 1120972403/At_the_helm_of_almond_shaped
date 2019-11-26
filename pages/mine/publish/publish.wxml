@@ -48,8 +48,6 @@
     <view class="text-center">失物招领被领与找到或其他原因，可以长按上下架</view>
   </view>
 
-
-
   <view hidden="{{TabCur != 1}}" class="image">
     <!-- bindlongpress="deleteImage" data-index="{{index}}" -->
     <block wx:for="{{myidles}}" wx:key="*this">
@@ -57,7 +55,6 @@
         <view class="flex  p-xs margin-bottom-sm mb-sm">
           <!-- 图片 -->
           <image class="flex-sub  padding-sm margin-left-xs radius img" src="{{item.logo}}" lazy-load></image>
-
           <!-- 描述 -->
           <view class="flex-twice radius">
             <view class=" margin-top-lg title">{{item.title}}</view>
@@ -74,17 +71,10 @@
           </view>
         </view>
       </navigator>
-
-
     </block>
     <view class="text-center">书籍卖出或其他原因，可以长按上下架</view>
   </view>
-
-
-
   <view hidden="{{TabCur != 2}}" class="image">
-
-
     <!-- 信息显示 -->
     <block wx:for="{{articleList}}" wx:key="*this">
       <view class="cu-card dynamic" bindlongpress="delete" data-id="{{item.id}}" data-del="{{item.delete_time}}" data-type="articleList">

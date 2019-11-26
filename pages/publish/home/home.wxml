@@ -2,31 +2,14 @@
   <view slot="content">发布</view>
 </cu-custom>
 <!-- 内容区  -->
-
-<view class="cu-list menu-avatar margin-top">
-  <view class="cu-item">
-    <view class="cu-avatar round lg border" style="background-image:url('{{userInfo.avatarUrl}}');"></view>
-    <view class="content flex-sub">
-      <view wx:if="{{stu_info}}">{{stu_info[0]}}
-        <text class='sign'>已认证</text>
-      </view>
-      <view wx:else>{{userInfo.nickName}}
-       <text class='sign red'>未认证</text>
-      </view>
-      <view class="text-gray text-sm flex justify-between">
-        {{time}}
-      </view>
-    </view>
-  </view>
-</view>
 <!-- 文字内容 -->
-<form bindsubmit="formSubmit" class='cirle'>
-  <view class="cu-form-group ">
-    <textarea maxlength="-1" disabled="{{modalName!=null}}" name="content" value="{{opinion}}" bindinput="textareaAInput" placeholder="这一刻我想说......"></textarea>
+<form bindsubmit="formSubmit" >
+  <view class="cu-form-group" >
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" name="content" value="{{opinion}}" bindinput="textareaAInput" placeholder="这一刻我想说......" style="height:300rpx;"></textarea>
   </view>
 
   <!-- 图片上传 -->
-  <view class="cu-bar bg-white margin-top">
+  <view class="cu-bar bg-white ">
     <view class="action">
       图片上传(可选)
     </view>
@@ -48,25 +31,13 @@
     </view>
   </view>
   <view class='fabu'>
-    <button class="cu-btn bg-green lg" formType="submit">发布</button>
+    <button class="cu-btn bg-green lg fabu" formType="submit">发布</button>
   </view>
 </form>
 
 
 
-<!-- 底部快捷导航 -->
-<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-  <view class="cu-item ">
 
-    <navigator url="/pages/box/live/idles/idles">
-      <button class="cu-btn bg-blue shadow-blur round">闲置物品</button>
-    </navigator>
-    <button class="cu-btn bg-green shadow-blur round"></button>
-    <navigator url="/pages/box/live/lostfound/lostfound">
-      <button class="cu-btn bg-blue shadow-blur round">失物招领</button>
-    </navigator>
-  </view>
-</view>
 
 <!-- 检查是否可以已经认证 -->
 <view class="cu-modal {{modalName=='goauth'?'show':''}}">

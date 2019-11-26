@@ -50,7 +50,6 @@
         <view class="content">
           <view>
             <text class="cuIcon-friendfavor lg text-black margin-left"></text>
-
             <text class="margin-left-xs" wx:if="{{flag}}">{{flag}}</text>
             <text class="margin-left-xs" wx:else>{{item.stu_name}}</text>
           </view>

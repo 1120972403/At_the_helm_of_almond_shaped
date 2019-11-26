@@ -1,7 +1,7 @@
 <!--pages/new/home/comment/comment.wxml-->
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content">卡片</view>
+  <view slot="content">新鲜事</view>
 </cu-custom>
 <!-- 信息内容 -->
 
@@ -35,7 +35,7 @@
     </view>
 
     <!-- 评论列表 -->
-    <!-- <view class="cu-list menu-avatar comment solids-top">
+    <view class="cu-list menu-avatar comment solids-top">
       <view class="cu-item">
         <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"></view>
         <view class="content">
@@ -68,15 +68,15 @@
           </view>
         </view>
       </view>
-    </view>-->
+    </view>
   </view>
 </view>
 
 <!-- 消息发送 -->
-<!-- <view class="cu-bar input foot">
+<view class="cu-bar input foot">
  <view class="action">
     <text class="cuIcon-emojifill text-grey"></text>
   </view>
   <input class="solid-bottom" maxlength="250" cursor-spacing="10" placeholder="请文明评论"></input>
   <button class="cu-btn bg-green shadow-blur">发送</button>
-</view> -->
+</view>

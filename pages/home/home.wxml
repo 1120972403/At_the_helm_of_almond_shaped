@@ -15,7 +15,7 @@
 
 
   <view class="action text-gray add-action">
-    <button class="cu-btn cuIcon-add bg-green shadow" bindtap='topublish'></button>
+    <view class="cu-btn cuIcon-add bg-green shadow animated" bindtap='topublish' hover-class="rotateIn"></view>
     发布
   </view>
 
@@ -26,10 +26,44 @@
     </view>
     百宝箱
   </view>
-  
+
   <view bindtap='click' data-name="mine" class="action  {{type=='mine'?'text-green':'text-gray'}}">
     <view class="cuIcon-my">
     </view>
     我的
+  </view>
+</view>
+
+<!-- 发布跳转 -->
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="padding-xl bg-white flex-bot">
+      <block wx:for="{{golist}}" wx:key="*this" >
+      <!-- url="{{item.url}}" -->
+        <view class="flex-bot flex-sub flex-column animated bounceInUp" hover-class="jello" bindtap="goto" data-index="{{index}}" >
+          <image src="{{item.img}}" class="img-bot"></image>
+          <text>{{item.name}}</text>
+       </view>
+      </block>
+    </view>
+    <view class=" bg-white padding">
+      <view class="cuIcon-close animated margin-bottom" style="font-size:40rpx; " hover-class="rotateIn" bindtap="hideModal"></view>
+    </view>
+  </view>
+</view>
+
+<!-- 检查是否可以已经认证 -->
+<view class="cu-modal {{modalName=='goauth'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">提示</view>
+    </view>
+    <view class="padding-xl bg-white">
+      由于国家倡导净网行动，您尚未登录无法享受部分功能，请前往认证！
+    </view>
+    <view class="cu-bar bg-white">
+      <button class=" cu-btn bg-white action margin-0 flex-sub  solid-left" bindtap="back">再看看</button>
+      <button open-type="getUserInfo" class="cu-btn action margin-0 flex-sub bg-white text-green solid-left" bindgetuserinfo="bindGetUserInfo">去登陆认证</button>
+    </view>
   </view>
 </view>

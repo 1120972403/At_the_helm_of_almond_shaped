@@ -1,23 +1,45 @@
 <!--index.wxml-->
-<view style="height:45rpx; " class="bg-gradual-blue"></view>
-<!-- 轮播图-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{false}}">
+  <view slot="content">百宝箱</view>
+</cu-custom>
+
 <swiper class="card-swiper {{!DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="3000" duration="500" bindchange="cardSwiper">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-    <view class="swiper-item animation-slide-left" bindtap="godetail" data-id="{{item.id}}" >  
-   
+    <view class="swiper-item animation-slide-left" bindtap="godetail" data-id="{{item.id}}">
+
       <image src="{{item.img}}" lazy-load></image>
     </view>
   </swiper-item>
 </swiper>
 <!-- 内容导航栏 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <view class='page'>
   <view class='tab'>
     <view class='tab-content'>
       <text class="cuIcon-title text-blue"></text>学习助手</view>
   </view>
   <view class="flex solid-bottom padding justify-center">
-    <navigator open-type="navigate" hover-class='none' url="/pages/box/study/score/score">
-      <view class="bg-blue light padding-sm margin-xs radius  animation-slide-left">等级考试查分</view>
+    <!-- <navigator open-type="navigate" hover-class='none' url="/pages/box/study/score/score"> -->
+    <navigator open-type="navigate" hover-class='none' bindtap="gocheck">
+      <view class="bg-blue light padding-sm margin-xs radius  animation-slide-left">中国政务</view>
     </navigator>
 
     <view class="bg-blue light padding-sm margin-xs radius  animation-slide-left" bindtap="goLib">图书馆</view>

@@ -1,30 +1,32 @@
-<cu-custom bgColor="bg-gradual-blue"  isCustom="{{false}}">
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{false}}">
   <view slot="content">新鲜事</view>
 </cu-custom>
 
-  <!-- 快捷按钮 --> 
-  <view class='btn-flex'>
-    <button class="cu-btn round  bg-white">全部</button>
-    <button class="cu-btn round  bg-white">校园资讯</button>
-    <button class="cu-btn round  bg-white">信息互动</button>
-    <text class='right'>  
+<!-- 快捷按钮 -->
+<view class='btn-flex'>
+  <view class="cu-btn round  bg-white">全部</view>
+  <view class="cu-btn round  bg-white">校园资讯</view>
+  <view class="cu-btn round  bg-white">信息互动</view>
+  <text class='right'>  
       <text>时间</text>
-    <text class="cuIcon-order lg text-gray large"></text>
-    </text>
-  </view> 
+  <text class="cuIcon-order lg text-gray large"></text>
+  </text>
+</view>
+
+<scroll-view scroll-y="true" bindscrolltolower="lower" style="background:red;">
   <!-- 信息显示 -->
-    <block wx:for="{{articleList}}" wx:key="*this">
+  <block wx:for="{{articleList}}" wx:key="*this">
     <view class="cu-card dynamic">
       <view class="cu-item shadow animation-slide-left">
         <view class="cu-list menu-avatar">
           <view class="cu-item">
             <view class="cu-avatar round lg border" style="background-image:url('{{item.avatarUrl}}');"></view>
             <view class="content flex-sub">
-              <view >{{item.nickName}}
+              <view>{{item.nickName}}
                 <text class='sign-red' wx:if="{{item.is_vip!=0 && item.auth!=0}}">官方</text>
-                 <text class='sign' wx:elif="{{item.auth!=0}}">已认证</text>
+                <text class='sign' wx:elif="{{item.auth!=0}}">已认证</text>
               </view>
-              <view class="text-gray text-sm flex justify-between"> 
+              <view class="text-gray text-sm flex justify-between">
                 {{item.create_time}}
               </view>
             </view>
@@ -38,7 +40,7 @@
             {{item.content}}
           </view>
           <view class="grid flex-sub padding-lr col-3 grid-square">
-            <view class="bg-img isCard  animation-slide-left" style="background-image:url('{{imgUrl}}{{imgs}}');" wx:if='{{item.imgs !=""}}' wx:for="{{item.imgs}}" wx:key="imgs" wx:for-item="imgs"  >
+            <view class="bg-img isCard  animation-slide-left" style="background-image:url('{{imgUrl}}{{imgs}}');" wx:if='{{item.imgs !=""}}' wx:for="{{item.imgs}}" wx:key="imgs" wx:for-item="imgs">
             </view>
           </view>
         </navigator>
@@ -49,6 +51,8 @@
       </view>
     </view>
   </block>
+
+</scroll-view>
 
 
 <!--浮动导航-->
@@ -65,12 +69,13 @@
     <view class="cu-bar bg-white justify-end">
       <view class="content">提示</view>
     </view>
-    <view class="padding-xl">
+    <view class="padding-xl bg-white">
       由于国家倡导净网行动，您尚未登录无法享受部分功能，请前往认证！
     </view>
-    <view class="cu-bar bg-white" >
-      <navigator url="/pages/mine/auth/auth" open-type="navigate" hover-class='none' class="action margin-0 flex-sub text-green solid-left" >
-       前往认证
+    <view class="cu-bar bg-white">
+      <navigator url="/pages/home/home" open-type="navigate" hover-class='none' class="action margin-0 flex-sub solid-left" bindtap="hideModal">再看看</navigator>
+      <navigator url="/pages/mine/auth/auth" open-type="navigate" hover-class='none' class="action margin-0 flex-sub text-green solid-left">
+        实名认证
       </navigator>
     </view>
   </view>

@@ -57,15 +57,6 @@
         </view>
       </view>
     </view>
-    <!-- <view class="cu-form-group">
-      <view class="title">QQ</view>
-      <input placeholder="请输入QQ" name="qq"></input>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">微信</view>
-      <button class="cu-btn round bg-green shadow">
-        <text class="cuIcon-weixin"></text> 加入微信</button>
-    </view> -->
   </view>
   <view class="center margin-top-xl margin-bottom-xl">
     <button class="cu-btn bg-green shadow round text-center" formType="submit">立即发布</button>
@@ -73,11 +64,6 @@
   </view>
 </form>
 
-<view style="height:20rpx;"></view>
-
-<loading hidden="{{hidden}}">
-  加载中...
-</loading>
 
 
 <!-- 扫码失败时要显示的内容 -->

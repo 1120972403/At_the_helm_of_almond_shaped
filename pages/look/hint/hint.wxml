@@ -1,0 +1,15 @@
+<!--pages/look/hint/hint.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">公告</view>
+</cu-custom>
+
+<view class="margin  bg-white" style="border-radius:10rpx" wx:for="{{newsList}}" wx:key="*this">
+  <view class="padding" bindtap="on" data-index="{{index}}">{{item.title}}</view>
+  <view wx:if="{{item.flag}}">
+    <view class="padding" style=" border-top:1px solid gainsboro;  position: relative;" >
+      <view>{{item.content}}</view>
+      <view class="right-time">{{item.update_time}}</view>
+    </view>
+  </view>
+
+</view>

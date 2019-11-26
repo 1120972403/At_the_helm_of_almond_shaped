@@ -24,7 +24,7 @@ Page({
   //查看大图
   previewImage: function (e) {
     console.log(e)
-    var src = this.data.mgUrl+e.target.dataset.src;
+    var src = this.data.imgUrl+e.target.dataset.src;
     wx.previewImage({
       current: src, // 当前显示图片的http链接  
       urls: [src] // 需要预览的图片http链接列表  

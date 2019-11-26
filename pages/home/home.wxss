@@ -1,0 +1,9 @@
+.flex-bot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-bot{
+  height: 100rpx;
+  width: 100rpx;
+}

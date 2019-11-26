@@ -26,10 +26,6 @@
   line-height: 60rpx;
 }
 
-.back {
-  /* border:1px solid white;
-  border-radius: 20rpx; */
-}
 
 
 .cuIcon-dianhua {

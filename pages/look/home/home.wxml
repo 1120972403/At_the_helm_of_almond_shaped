@@ -8,7 +8,7 @@
       <text class="cuIcon-noticefill lg text-red"></text>
     </view>
     <swiper vertical="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="4000" class="tui-swiper">
-      <swiper-item wx:for="{{newsList}}" wx:key="{{index}}" class="tui-swiper-item">
+      <swiper-item wx:for="{{newsList}}" wx:key="{{index}}" class="tui-swiper-item" bindtap="gohint" data-index="{{index}}">
         <view class="tui-news-item" bindtap='detail'>{{item.content}}</view>
       </swiper-item>
     </swiper>
@@ -16,22 +16,22 @@
 </view>
 <!-- 天气预报及时间 -->
 <navigator url="/pages/look/weather/weather">
-<view class="container">
-  <view class="weather yesterday">
-    <view>
-      <view class='date'>今天</view>
-      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
-      <view class='tmp'>{{today.tmp_min}}℃~{{today.tmp_max}}℃</view>
-      <view class='cond_txt'>{{today.cond_txt_d}}</view>
-    </view>
-    <view>
-      <view class='weather_icon'>
-        <image src='{{todyIcon}}' class="cloud"></image>
+  <view class="container">
+    <view class="weather yesterday">
+      <view>
+        <view class='date'>今天</view>
+        <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+        <view class='tmp'>{{today.tmp_min}}℃~{{today.tmp_max}}℃</view>
+        <view class='cond_txt'>{{today.cond_txt_d}}</view>
       </view>
-      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+      <view>
+        <view class='weather_icon'>
+          <image src='{{todyIcon}}' class="cloud"></image>
+        </view>
+        <view class='lastUpdateDate'>最后更新：{{update}}</view>
+      </view>
     </view>
   </view>
-</view>
 </navigator>
 
 <!-- 校内大事件 -->
@@ -51,7 +51,7 @@
 <navigator class="cu-card case" url="/pages/look/getJob/getJob">
   <view class="cu-item animation-slide-right">
     <view class="image">
-          <image src="https://zzxl-1257112807.cos.ap-chengdu.myqcloud.com/dc6957baec4540c788e1015b39cbdc0a_1200_350.jpg" class="img" mode="aspectFill" lazy-load></image>
+      <image src="https://zzxl-1257112807.cos.ap-chengdu.myqcloud.com/dc6957baec4540c788e1015b39cbdc0a_1200_350.jpg" class="img" mode="aspectFill" lazy-load></image>
       <view class="cu-tag bg-blue">招生就业</view>
       <view class="cu-bar bg-shadeBottom">
         <text class="text-cut">校招信息，快速了解企业</text>
@@ -60,23 +60,6 @@
   </view>
 
 </navigator>
-
-
-<!-- 速览中医大 -->
-<!-- <view class="cu-card case">
-  <view class="cu-item shadow">
-    <view class="image">
-          <image src="http://www.cdutcm.edu.cn/upload/main/advertisement/00b0fbd754544ec4a52a6c7c8b7c82b3_1200_350.jpg" class="img" mode="aspectFill"></image>
-      <view class="cu-tag bg-blue">速览中医大</view>
-      <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut">快速了解中医大</text>
-      </view>
-    </view>
-  </view>
-
-</view> -->
-
-
 <view class="cu-modal {{modalName=='news'?'show':''}}">
   <view class="cu-dialog">
     <view class="cu-bar bg-white justify-end">
@@ -86,7 +69,7 @@
       </view>
     </view>
     <view class="padding-xl">
-     {{news.content}}
+      {{news.content}}
     </view>
   </view>
 </view>
@@ -100,43 +83,41 @@
   </view>
   <view class='cont'>
     <view class='cont-p'>
-      <view class='text'><text>1</text></view><view>点击右上角</view>
+      <view class='text'>
+        <text>1</text>
+      </view>
+      <view>点击右上角</view>
       <image src='/images/x.png'></image>
     </view>
     <view class='cont-p'>
-      <view class='text'><text>2</text></view><view>点击“添加我的小程序”</view>
+      <view class='text'>
+        <text>2</text>
+      </view>
+      <view>点击“添加我的小程序”</view>
     </view>
     <view class='cont-p'>
-      <view class='text'><text>3</text></view><view>回到微信首页下拉聊天列表，</view>
+      <view class='text'>
+        <text>3</text>
+      </view>
+      <view>回到微信首页下拉聊天列表，</view>
     </view>
     <view class='cont-p-lib'>
-      <view class='text' style='opacity:0;'><text>3</text></view><view>从“我的小程序”里打开“执掌杏林”</view>
+      <view class='text' style='opacity:0;'>
+        <text>3</text>
+      </view>
+      <view>从“我的小程序”里打开“执掌杏林”</view>
     </view>
     <view class='cont-p-three'>
       <image src='/images/right.png'></image>
       <view class='right' style=' background-size: 100% 100%;'>
-          <view class='left-p'>
-            <view class='title'>我的小程序</view>
-            <image src='/images/jia.png'></image>执掌杏林</view>
-          <view class='left-p'>
-            <view class='title' style='opacity:0;'>我的小程序</view>
-            <view style='color:#4C4C4E;width:27px;height:27px;border-radius:50%;background:#4C4C4E;'></view>小程序</view>
+        <view class='left-p'>
+          <view class='title'>我的小程序</view>
+          <image src='/images/jia.png'></image>执掌杏林</view>
+        <view class='left-p'>
+          <view class='title' style='opacity:0;'>我的小程序</view>
+          <view style='color:#4C4C4E;width:27px;height:27px;border-radius:50%;background:#4C4C4E;'></view>小程序</view>
       </view>
     </view>
   </view>
-  <view class='bottom' bindtap='closeThis'>记住了  我去试试</view>
+  <view class='bottom' bindtap='closeThis'>记住了 我去试试</view>
 </view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

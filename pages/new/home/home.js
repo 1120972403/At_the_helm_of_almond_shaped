@@ -20,22 +20,22 @@ Component({
     if (!wx.getStorageSync('stu_info')) {
       that.setData({
         modalName: "goauth",
-        flag:"**********嘿嘿！加密了*************"
+        flag: "**********嘿嘿！加密了*************"
       })
     }
-    wx.request({
-      url: apiUrl +'article/articleList',
-      method:'post',
-      data:{
-        type:"all"
-      },
-      success:(res)=>{
-        console.log(res.data.data.articleList)
-        that.setData({
-          articleList: res.data.data.articleList
-        })
-      }
-    })
+      wx.request({
+        url: apiUrl + 'article/articleList',
+        method: 'post',
+        data: {
+          type: "all"
+        },
+        success: (res) => {
+          console.log(res.data.data.articleList)
+          that.setData({
+            articleList: res.data.data.articleList
+          })
+        }
+      })
 
   },
 
@@ -46,16 +46,19 @@ Component({
       })
     },
     // 评论页面跳转
-    pinglun: function() {
+    pinglun: function () {
       wx.navigateTo({
         url: '/pages/new/comment/comment',
       })
     },
+    lower(e) {
+      console.log(e)
+    }
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 })

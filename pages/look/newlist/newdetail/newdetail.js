@@ -20,11 +20,10 @@ Page({
     wx.request({
       url: apiUrl + 'new_list/newdetail?id=' + id,
       success:function(res){
-        console.log(res.data.data);
         var title = res.data.data[0].article_title
         var date = res.data.data[0].article_date
-        var str = res.data.data[0].article_content.replace(/<img/gi, '<img style="max-width:100%;height:auto;float:left;display:block" ').replace(/\/Upload/gi, "http://www.cdutcm.edu.cn/Upload").replace(/line-height: 2.5/gi, 'line-height: 150%').replace(/font-size: 18px/gi,'font-size: 14px')
-        // console.log(str)
+        var str = res.data.data[0].article_content.replace(/<img/gi, '<img style="max-width:100%;height:auto;float:left;display:block" ').replace(/src="\/Upload\//gi, "src=\"http://www.cdutcm.edu.cn/Upload/").replace(/line-height: 2.5/gi, 'line-height: 150%').replace(/font-size: 18px/gi, 'font-size: 14px').replace(/class="MsoNormal"/gi, '').replace(/<h1>/gi, '<h2>').replace(/<\/h1>/gi, '</h2>')
+        console.log(str)
         that.setData({
           title: title,
           date: date,

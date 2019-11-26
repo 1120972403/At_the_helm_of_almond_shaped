@@ -1,40 +1,49 @@
 /**index.wxss**/
+
 /* swiper样式重写 */
-.myswiper{
-  padding: 20rpx;
-  
+page{
+  background-color: white;
 }
+.myswiper {
+  padding: 20rpx;
+}
+
 .card-swiper {
   height: 250rpx !important;
 }
-.swiper-item{
-  width: 100%;
-  height: 200rpx;
-}
-.swpimg{
-  width: 100%;
-  height: 200rpx;
 
+.swiper-item {
+  width: 100%;
+  height: 200rpx;
 }
-.box {  
-  margin: 20rpx 0; 
+
+.swpimg {
+  width: 100%;
+  height: 200rpx;
+}
+
+.box {
+  margin: 20rpx 0;
 }
 
 .box view.cu-bar {
-  margin-top: 20rpx; 
+  margin-top: 20rpx;
 }
 
-swiper{
+swiper {
   background-color: white;
   /* height: 300rpx!important; */
 }
-.swiper-item{
+
+.swiper-item {
   box-shadow: 10rpx 10rpx 40rpx gray;
   /* background-color: gainsboro; */
 }
+
 .card-swiper {
-   background-color: #F5F7F9;
+  background-color: #f5f7f9;
 }
+
 .tab {
   background-color: #f1f1f1;
   padding: 20rpx;
@@ -54,13 +63,45 @@ swiper{
   font-size: 30rpx;
   /* margin: 20rpx 50rpx; */
 }
-.tab-btn-flex{
+
+.tab-btn-flex {
   display: flex;
   width: 33.33%;
 }
-.page{
+
+.page {
   background-color: white;
 }
-.block{
+
+.block {
   /* display: flex; */
+}
+
+.k {
+  border: 1px dotted;
+  position: relative;
+}
+
+.right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.left-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.right-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.left-top {
+position: absolute;
+  top: 0;
+  left: 0;
 }

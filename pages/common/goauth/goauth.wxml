@@ -1,18 +1,17 @@
 <!--pages/common/goauth/goauth.wxml-->
-<!-- 检查是否教务系统认证 -->
 <template name="goauth">
-<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+<!-- 检查是否可以已经认证 -->
+<view class="cu-modal {{modalName=='goauth'?'show':''}}">
   <view class="cu-dialog">
     <view class="cu-bar bg-white justify-end">
       <view class="content">提示</view>
     </view>
-    <view class="padding-xl">
+    <view class="padding-xl bg-white">
       由于国家倡导净网行动，您尚未登录无法享受部分功能，请前往认证！
     </view>
     <view class="cu-bar bg-white">
-      <navigator url="/pages/mine/auth/auth" >
-        <view class="action margin-0 flex-sub text-green solid-left">前往认证</view>
-      </navigator>
+      <button class=" cu-btn bg-white action margin-0 flex-sub  solid-left" bindtap="back">再看看</button>
+       <button open-type="getUserInfo" class="cu-btn action margin-0 flex-sub bg-white text-green solid-left" bindgetuserinfo="bindGetUserInfo">立即体验</button>
     </view>
   </view>
 </view>

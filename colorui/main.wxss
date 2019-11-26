@@ -3109,7 +3109,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .padding-sm {
-  padding: 20rpx;
+  padding: 20rpx;   
 }
 
 .padding {

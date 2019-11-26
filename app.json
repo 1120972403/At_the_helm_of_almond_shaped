@@ -1,8 +1,7 @@
 {
   "pages": [
-    
-    "pages/home/home",
     "pages/welcome/welcome",
+    "pages/home/home",
     "pages/look/home/home",
     "pages/new/home/home",
     "pages/publish/home/home",
@@ -42,7 +41,8 @@
     "pages/box/other/plant/history/history",
     "pages/box/other/plant/history/detail/detail",
     "pages/box/study/library/library",
-    "pages/box/study/library/retrieve/retrieve"
+    "pages/box/study/library/retrieve/retrieve",
+    "pages/look/hint/hint"
   ],
   "permission": {
     "scope.userLocation": {
@@ -50,7 +50,10 @@
     }
   },
   "window": {
-    "navigationStyle": "custom"
+      "navigationBarBackgroundColor": "#058BF2",
+      "navigationBarTitleText": "执掌杏林",
+      "navigationStyle": "custom",
+      "navigationBarTextStyle": "white"
   },
   "networkTimeout": {
     "request": 10000,
@@ -60,7 +63,8 @@
     "cu-custom": "/colorui/components/cu-custom"
   },
   "navigateToMiniProgramAppIdList": [
-    "wx7c934c1fcbc0006c"
+    "wx7c934c1fcbc0006c",
+    "wx2eec5fb00157a603"
   ],
   "sitemapLocation": "sitemap.json"
 }

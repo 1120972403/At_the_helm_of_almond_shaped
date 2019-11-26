@@ -1,20 +1,10 @@
 <!--pages/welcome/welcome.wxml-->
 <view class="bg">
   <image class="swiper-image" src="/images/bg.png"></image>
-
-
   <view class="flex wz text-xxl">
     <view class=" bg-blue padding-sm margin-xs radius1 animation-scale-down">执</view>
     <view class=" bg-blue padding-sm margin-xs radius1 animation-scale-down">掌</view>
     <view class=" bg-blue padding-sm margin-xs radius1 animation-scale-down">杏</view>
     <view class=" bg-blue padding-sm margin-xs radius1 animation-scale-down">林</view>
-  </view>
-
-  <!-- 需要使用 button 来授权登录 -->
-  <view wx:if="{{!isFir}}">
-    <view wx:if="{{canIUse}}">
-      <button open-type="getUserInfo" class="button-img bg-green animation-fade" bindgetuserinfo="bindGetUserInfo">立即体验</button>
-    </view>
-    <view wx:else>请升级微信版本</view>
   </view>
 </view>

@@ -52,15 +52,20 @@
       <text class="text-grey float-right">{{userInfo.city}}-{{userInfo.province}}</text>
     </view>
   </view>
-    <view class="cu-item">
+  <view class="cu-item">
     <view class="content">
       <text class="cuIcon-comment text-grey"></text>
       <text class="text-grey">介绍：</text>
       <text class="text-grey">Study hard and make progress every day</text>
     </view>
   </view>
+  <view class="cu-item">
+    <view class="content text-center" bindtap="cleanLogin">
+      <text class="text-red">退出认证</text>
+    </view>
+  </view>
 </view>
 
 <cu-custom isCustom="{{true}}">
-  <view slot="content">招生就业</view>
+  <view slot="content">个人信息</view>
 </cu-custom>

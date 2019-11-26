@@ -14,6 +14,7 @@ Page({
     //选择的tabSelect的id
     tabId:0,
     CustomBar: app.globalData.CustomBar,
+    
   },
   //搜索信息
   valuechange: function (res) {
@@ -53,6 +54,7 @@ Page({
         keyword,
       },
       success: function (res) {
+        console.log(res.data.data.lostfoundList)
         // 检查是否还有下一页数据，若没有则提示并中断
         if (res.data.data.lostfoundList.length == 0) {
           that.setData({
@@ -168,11 +170,6 @@ Page({
       //查询招领列表
       this._getList('found', 1, "");
     }
-    // this.setData({
-    //   page: 1,
-    //   isLoad: true
-    // })
-    // this._getList('all',1);
  
   },
 

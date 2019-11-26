@@ -22,14 +22,6 @@ Page({
         modalName: "goauth",
       })
     }
-    // 调用函数时，传入new Date()参数，返回值是日期和时间  
-    // 再通过setData更改Page()里面的data，动态更新页面的数据  
-    var time = util.formatTime(new Date());
-    that.setData({
-      userInfo: wx.getStorageSync('isFirst'),
-      stu_info: wx.getStorageSync('stu_info'),
-      time: time
-    })
   },
   formSubmit: function(e) {
     console.log(e.detail.value);

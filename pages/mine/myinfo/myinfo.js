@@ -6,7 +6,12 @@ Page({
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
   },
-
+  cleanLogin(){
+    wx.setStorageSync('stu_info','')
+    wx.navigateTo({
+      url: '/pages/home/home',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

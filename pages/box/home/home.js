@@ -9,6 +9,7 @@ Component({
   data: {
     cardCur: 0,
     swiperList: [],
+    Wheight:400
 
   },
   attached() {
@@ -17,6 +18,7 @@ Component({
       url: apiUrl+'box_news/newslist',
       method: "get",
       success: function(res) {
+        console.log(res.data.data)
         that.setData({
           swiperList: res.data.data
         })
@@ -30,6 +32,16 @@ Component({
     cardSwiper(e) {
       this.setData({
         cardCur: e.detail.current
+      })
+    },
+    gocheck(){
+      wx.navigateToMiniProgram({
+        appId: 'wx2eec5fb00157a603',
+
+        envVersion: 'release',
+        success(res) {
+          // 打开成功
+        }
       })
     },
     gomap(){
