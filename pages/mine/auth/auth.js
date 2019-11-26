@@ -74,7 +74,7 @@ Page({
           success: function(e) {
             console.log(e.data);
             if (e.data.message == "ok" || e.data.code == 0) {
-              var stu_name = e.data.data.replace(/<[^>]+>/g, '').replace(/\s+/g, '').replace(/教学管理系统/g, '').replace(/[^\u4e00-\u9fa5]/g, '').replace(/修改密码设置锁定注销退出登录时间版权所有添加我的桌面我的桌面填充一级菜单填充二级菜单填充三级菜单填充一级菜单构建一级菜单同时符合下拉菜单要求设定默认显示一级菜单构建左菜单构建下拉菜单遍历取出二级菜单二级左菜单字符串加入二级下拉菜单构建三级下拉字符串遍历取出三级菜单三级左菜单字符串三级下拉菜单字符串取出三级菜单装载三级下拉菜单没有下面代码有问题装载一级下拉菜单判断是否为注销登录判断是否为单点登录单点登录的注销还要注销中心服务器/g, '');
+              let stu_name="";
               console.log(stu_name)
               //执行信息添加
               wx.request({
